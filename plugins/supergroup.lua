@@ -1334,7 +1334,7 @@ local function run(msg, matches)
             -- channel_get_admins(receiver,callback, {receiver = receiver})
         end
 
-        if matches[1] == "طيططي" and is_momod(msg) then
+        if matches[1] == "كشف بوت" and is_momod(msg) then
             member_type = 'تم ☑️ الكشف عن البوتات في المجموعه 🎈'
             savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup bots list")
             channel_get_bots(receiver, callback, {receiver = receiver, msg = msg, member_type = member_type})
@@ -2238,7 +2238,7 @@ return {
     "^(الاداريين)$",
     "^(مدير المجموعه)$",
     "^(الادمنيه)$",
-    "^(طيططي)$",
+    "^(كشف بوت)$",
     "^(ايدي الاعضاء)$",
     "^([Kk]icked)$",
   "^(بلوك) (.*)",
@@ -2289,7 +2289,7 @@ return {
     "^[#!/](الاداريين)$",
     "^[#!/](مدير المجموعه)$",
     "^[#!/](الادمنيه)$",
-    "^[#!/](طيططي)$",
+    "^[#!/](كشف بوت)$",
     "^[#!/](ايدي الاعضاء)$",
     "^[#!/]([Kk]icked)$",
   "^[#!/](بلوك) (.*)",
