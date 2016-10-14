@@ -107,6 +107,7 @@ install() {
   cd ..
   install_luarocks
   install_rocks
+  
 }
 
 if [ "$1" = "install" ]; then
@@ -126,15 +127,53 @@ else
     exit 1
   fi
   
-  chmod 777 devpoint.sh
+ ## chmod 777 config_fix.sh
   
-  #Adding some color. By @MehdiHS
-   echo -e "\033[38;5;208m"
-   echo -e "     > Channel : @DevPointTeam                        "
-   echo -e "     > Developer : @TH3_GHOST                       "
-   echo -e "     > Bot ID : @SuperDevPoint                        "
-   echo -e "     > Github : GitHub.com/DevPointTeam/DevPoint     "
-   echo -e "                                              \033[0;00m"
-   echo -e "\e[36m"
-  ./tg/bin/telegram-cli -k ./tg/tg-server.pub -s ./bot/devpoint.lua -l 1 -E $@
+  echo -e "\033[38;5;208m"   
+  echo -e "       DevTSHAKE            "
+  echo -e "       DevTSHAKE           "
+  echo -e "       DevTSHAKE    "
+  echo -e "       DevTSHAKE     "
+  echo -e "       DevTSHAKE      "
+  echo -e "       DevTSHAKE     "
+  echo -e "       DevTSHAKE            " 
+  echo -e "       DevTSHAKE            "     
+  echo -e "       DevTSHAKE           "
+  echo -e "       DevTSHAKE         " 
+  echo -e "       DevTSHAKE           " 
+  echo -e "       DevTSHAKE          \033[0;00m"
+  echo -e "\e[36m"                                      
+  echo -e "MastersDev" 
+   cat << EOF
+ $f1   _____    _        _    _    _____    Dev @lIMyIl 
+ $f1  |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
+ $f1    | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
+ $f1    | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
+ $f1    |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
+ 
+EOF
+echo -e "\e[100m          MastersDev          \e[00;37;40m"
+echo -e "\e[01;34m           by iDev1           \e[00;37;40m"
+echo ""
+   
+  if [ -f data/config.lua ]; then
+    ./config_fix.sh
+  fi
+  
+  if [ -f plugins/gban_installer.lua ]; then
+    
+    L=$(wc -l plugins/gban_installer.lua | cut -d " " -f1)
+    R=$(echo $L -20 | bc)
+    
+    #N=$(grep -nr "send_msg('chat#id'.*" plugins/gban_installer.lua | cut -d ":" -f1)
+    #M=$(grep -nr "send_msg('channel#id'.*" plugins/gban_installer.lua | cut -d ":" -f1)
+    
+    grep -v "send_msg('chat#id'.*" plugins/gban_installer.lua > gban1bot
+    grep -v "send_msg('channel#id'.*" gban1 > plugins/gban_installer.lua
+    sed -i "s/.*chat.*/&\n    send_msg('chat#id'..msg.to.id, '$R accounts globally banned. ☠', ok_cb, false)/" plugins/gban_installer.lua
+    sed -i "s/.*channel.*/&\n    send_msg('channel#id'..msg.to.id, '$R accounts globally banned. ☠', ok_cb, false)/" plugins/gban_installer.lua
+    rm gban1
+    
+  fi
+  ./tg/bin/telegram-cli -k ./tg/tg-server.pub -s ./DevTSHAKE/DevTSHAKE.lua -l 1 -E $@
 fi
