@@ -143,7 +143,7 @@ else
   echo -e "       DevTSHAKE           " 
   echo -e "       DevTSHAKE          \033[0;00m"
   echo -e "\e[36m"                                      
-  echo -e "MastersDev" 
+  echo -e "DevTSHAKE" 
    cat << EOF
  $f1   _____    _        _    _    _____    Dev @lIMyIl 
  $f1  |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
@@ -152,8 +152,8 @@ else
  $f1    |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
  
 EOF
-echo -e "\e[100m          MastersDev          \e[00;37;40m"
-echo -e "\e[01;34m           by iDev1           \e[00;37;40m"
+echo -e "\e[100m          DevTSHAKE        \e[00;37;40m"
+echo -e "\e[01;34m          devil          \e[00;37;40m"
 echo ""
    
   if [ -f data/config.lua ]; then
