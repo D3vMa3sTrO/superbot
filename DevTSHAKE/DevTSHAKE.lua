@@ -229,7 +229,6 @@ function create_config( )
     "me",
     "helpall",
     "namebot",
-    "save",
     "info",
     "html",
     "lock_inl",
@@ -243,8 +242,9 @@ function create_config( )
     "lock_emoji",
     "lock_cmd",
     "broadcast",
-    "onn",
-    "kickme"
+    "kickme",
+    "ons",
+    "banbot"
     },
     sudo_users = {67369633},--Sudo users
     moderation = {data = 'data/moderation.json'},
