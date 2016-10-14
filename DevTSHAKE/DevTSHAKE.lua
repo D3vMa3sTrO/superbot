@@ -216,7 +216,7 @@ function create_config( )
     "stats",
     "anti_spam",
     "all",
-    "helo',
+    "helo",
     "save",
     "msg_checks",
     "badword",
