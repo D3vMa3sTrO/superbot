@@ -1,5 +1,6 @@
 -- -*- coding: utf-8 -*-
 --
+
 -- Simple JSON encoding and decoding in pure Lua.
 --
 -- Copyright 2010-2014 Jeffrey Friedl
