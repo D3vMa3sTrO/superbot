@@ -32,8 +32,8 @@ cat << EOF
  $f1    |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
  
 EOF
-echo -e "               \e[100m                Steady script            \e[00;37;40m"
-echo -e "               \e[01;34m              DEV > @lIMyIl          \e[00;37;40m"
+echo -e "               \e[100m                TSHAKE script            \e[00;37;40m"
+echo -e "               \e[01;34m              CH > @lTSHAKEl_CH          \e[00;37;40m"
 echo ""
 cat << EOF
  $f1   _____    _        _    _    _____    Dev @lIMyIl 
@@ -59,7 +59,7 @@ sleep 0.5
 
 
 echo ""
-echo -e "\033[38;5;208m             IRAQ                                 \033[0;00m"
+echo -e "\033[38;5;208m             CH  : @lTSHAKEl_CH                               \033[0;00m"
 echo -e "\033[38;5;208m             DEV : @lIMyIl                  \033[0;00m"
 echo -e "\033[38;5;208m             DEV : @li_XxX_il                      \033[0;00m"
 echo -e "\033[38;5;208m             DEV : @h_k_a                       \033[0;00m"
@@ -192,8 +192,8 @@ cat << EOF
  $f1    |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
  
 EOF
-echo -e "                \e[100m                Steady script           \e[00;37;40m"
-echo -e "               \e[01;34m              DEV > @lIMyIl  \e[00;37;40m"
+echo -e "                \e[100m                TSHAKE script           \e[00;37;40m"
+echo -e "               \e[01;34m              CH > @lTSHAKEl_CH  \e[00;37;40m"
 echo ""
 cat << EOF
  $f1   _____    _        _    _    _____    Dev @lIMyIl 
@@ -219,7 +219,7 @@ sleep 0.5
 
 
 echo ""
-echo -e "\033[38;5;208m         IRAQ                                      \033[0;00m"
+echo -e "\033[38;5;208m       CH  : @lTSHAKEl_CH                                     \033[0;00m"
 echo -e "\033[38;5;208m       DEV : @lIMyIl                            \033[0;00m"
 echo -e "\033[38;5;208m       DEV : @li_XxX_il                         \033[0;00m"
 echo -e "\033[38;5;208m       DEV : @h_k_a    \033[0;00m"
