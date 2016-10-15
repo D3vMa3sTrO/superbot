@@ -4,6 +4,7 @@
      | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
      | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
      |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
+              CH > @lTSHAKEl_CH
 --]]
 local function check_member_superrem2(cb_extra, success, result)
 local receiver = cb_extra.receiver
@@ -45,7 +46,7 @@ if get_receiver(msg) then
 redis:del('expiretime', get_receiver(msg))
 rem_mutes(msg.to.id)
 superrem2(msg)
-return send_large_msg(get_receiver(msg), 'تم انتهاء تاريخ الصلاحية في المجموعة 🙂')
+return send_large_msg(get_receiver(msg), 'تم ☑️ انتهاء تاريخ الصلاحية في المجموعة ')
 else
 return
 end
@@ -57,27 +58,27 @@ redis:hset('expires0',msg.to.id,'5')
 end
 if tonumber(timetoexpire) == 1 then
 if redis:hget('expires1',msg.to.id) then return msg end
-send_large_msg(get_receiver(msg), ' 🙂 صفر يوم باقي الى انتهاء صلاحية هذه المجموعة 😴 \n اطلب من المطور اعادة التفعيل ❤️')
+send_large_msg(get_receiver(msg), ' خلصن ايام التفعيل لهذه المجموعه \n اطلب من المطور  تجديد الوقت')
 redis:hset('expires1',msg.to.id,'5')
 end
 if tonumber(timetoexpire) == 2 then
 if redis:hget('expires2',msg.to.id) then return msg end
-send_large_msg(get_receiver(msg), '🙂 يومين باقي الى انتهاء صلاحية هذه المجموعة 😴 \n اطلب من المطور اعادة التفعيل ❤️')
+send_large_msg(get_receiver(msg), 'يومين وتنتهي صلاحيه المجموعه \n اطلب من المطور  تجديد الوقت')
 redis:hset('expires2',msg.to.id,'5')
 end
 if tonumber(timetoexpire) == 3 then
 if redis:hget('expires3',msg.to.id) then return msg end
-send_large_msg(get_receiver(msg), '🙂 ثلاثة ايام باقية الى انتهاء صلاحية هذه المجموعة 😴 \n اطلب من المطور اعادة التفعيل ❤️')
+send_large_msg(get_receiver(msg), '3  ايام وتنتهي صلاحيه المجموعه \n اطلب من المطور  تجديد الوقت')
 redis:hset('expires3',msg.to.id,'5')
 end
 if tonumber(timetoexpire) == 4 then
 if redis:hget('expires4',msg.to.id) then return msg end
-send_large_msg(get_receiver(msg), '🙂 اربعة ايام باقي الى انتهاء صلاحية هذه المجموعة 😴 \n اطلب من المطور اعادة التفعيل ❤️')
+send_large_msg(get_receiver(msg), 'اربعه ايام وتنتهي صلاحيه المجموعه \n اطلب من المطور  تجديد الوقت')
 redis:hset('expires4',msg.to.id,'5')
 end
 if tonumber(timetoexpire) == 5 then
 if redis:hget('expires5',msg.to.id) then return msg end
-send_large_msg(get_receiver(msg), '🙂 خمسة ايام باقي الى انتهاء صلاحية هذه المجموعة 😴 \n اطلب من المطور اعادة التفعيل ❤️')
+send_large_msg(get_receiver(msg), 'خمسه ايام وتنتهي صلاحيه المجموعه \n اطلب من المطور  تجديد الوقت')
 redis:hset('expires5',msg.to.id,'5')
 end
 end
@@ -90,13 +91,13 @@ local time = os.time()
 local buytime = tonumber(os.time())
 local timeexpire = tonumber(buytime) + (tonumber(matches[2]) * 86400)
 redis:hset('expiretime',get_receiver(msg),timeexpire)
-return "🙂 تم وضع مدة انتهاء صلاحية الكروب الى  ("..matches[2].. ") "
+return " تم ☑️ وضع مدة انتهاء صلاحية الكروب الى  ("..matches[2].. ") "
 end
 if matches[1]:lower() == 'تجديد' then
 local expiretime = redis:hget ('expiretime', get_receiver(msg))
-if not expiretime then return ' 🙂 لم يتم تحديد التاريخ بنجاح ❎' else
+if not expiretime then return ' لم يتم ☑️ تحديد التاريخ بنجاح' else
 local now = tonumber(os.time())
-return (math.floor((tonumber(expiretime) - tonumber(now)) / 86400) + 1) .. " 🙂 يوم اخر. "
+return (math.floor((tonumber(expiretime) - tonumber(now)) / 86400) + 1) .. "تم تجديد مده الصلاحيه الى"
 end
 end
 
@@ -109,3 +110,12 @@ patterns = {
 run = run,
 pre_process = pre_process
 }
+
+--[[ 
+    _____    _        _    _    _____    Dev @lIMyIl 
+   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
+     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
+     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
+     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
+              CH > @lTSHAKEl_CH
+--]]
