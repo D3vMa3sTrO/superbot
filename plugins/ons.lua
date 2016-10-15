@@ -24,6 +24,7 @@ end
 return {
   patterns = {
     "^(زحلك)$",
+    "^[#!/](زحلك)$",
     "^!!tgservice (.+)$",
   },
   run = run
