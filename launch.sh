@@ -2,7 +2,7 @@
 
 THIS_DIR=$(cd $(dirname $0); pwd)
 cd $THIS_DIR
-
+ 
 update() {
   git pull
   git submodule update --init --recursive
