@@ -243,7 +243,7 @@ function create_config( )
     "lock_cmd",
     "broadcast",
     "kickme",
-    "ons",
+    "invite",
     "banbot"
     },
     sudo_users = {67369633},--Sudo users
