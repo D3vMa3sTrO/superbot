@@ -15,9 +15,9 @@ local hash = 'kick:'..msg.to.id..':'..msg.from.id
 
     if msg.text then 
    local hash = 'kick:'..msg.to.id..':'..msg.from.id 
-      if msg.text:match("^نعم$") and redis:get(hash) == "waite" then 
+      if msg.text:match('نعم') and redis:get(hash) == "waite" then 
      redis:set(hash, "ok") 
-   elseif msg.text:match("^لا$") and redis:get(hash) == "waite" then 
+   elseif msg.text:match('لا') and redis:get(hash) == "waite" then 
    send_large_msg(get_receiver(msg), "زين سويت خليك ويانه بتونس 🌚❤️🙊") 
      redis:del(hash, true) 
 
@@ -34,12 +34,12 @@ local hash = 'kick:'..msg.to.id..':'..msg.from.id
 
 return { 
   patterns = { 
-  "مغادره", 
-  "^نعم$", 
-  "^لا$" ,
-  "/مغادره", 
-  "^/نعم", 
-  "^/لا" 
+  '^(مغادره)$', 
+  '^(نعم)$', 
+  '^(لا)$' ,
+  '^[#!/](مغادره)$', 
+  '^[#!/](نعم)$', 
+  '^[#!/](لا)$'
   }, 
   run = run, 
 }
