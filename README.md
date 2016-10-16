@@ -1,5 +1,5 @@
 #TSHAKE_cli
-🔱- طريقه تنصيب سورس TSHAKe -🔱
+🔱- طريقه تنصيب سورس TSHAKE -🔱
 
 🔺- افتح ترمنال جديد وخلي🔧👇
 
@@ -11,11 +11,11 @@ sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-d
 
 🔺- وراهه 👇
 
-git clone https://github.com/moodlIMyIl/TSHAKe.git
+git clone https://github.com/moodlIMyIl/TSHAKE.git
 
 🔺- وراهه👇
 
-cd TSHAKe
+cd TSHAKE
 
 🔺- وراهه👇
 
@@ -41,11 +41,11 @@ sudo service redis-server start
 
 🔺- تفتح ترمنال جديد وتكتب 
 
-cd TSHAKe
+cd TSHAKE
 
 🔺- انتر وبعدها هل امر 
 
-bash TSHAKe.sh -t
+bash TSHAKE.sh -t
 
 🔺- انتظر 5 ثواني يشتغل بوت 
 
@@ -70,7 +70,7 @@ by :- @li_XxX_il
 To install everything in one command (useful for VPS deployment) on Debian-based distros, use:
 ```sh
 #https://github.com/yagop/telegram-bot/wiki/Installation
-sudo apt-get update; sudo apt-get upgrade -y --force-yes; sudo apt-get dist-upgrade -y --force-yes; sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev lua-socket lua-sec lua-expat libevent-dev libjansson* libpython-dev make unzip git redis-server g++ autoconf -y --force-yes && git clone https://github.com/moodlIMyIl/TSHAKe && cd TSHAKe && chmod +x launch.sh && ./launch.sh install && ./launch.sh
+sudo apt-get update; sudo apt-get upgrade -y --force-yes; sudo apt-get dist-upgrade -y --force-yes; sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev lua-socket lua-sec lua-expat libevent-dev libjansson* libpython-dev make unzip git redis-server g++ autoconf -y --force-yes && git clone https://github.com/moodlIMyIl/TSHAKE && cd TSHAKE && chmod +x launch.sh && ./launch.sh install && ./launch.sh
 ```
 
 * * *
