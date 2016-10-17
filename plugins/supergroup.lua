@@ -5,7 +5,7 @@
      | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
      |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
               CH > @lTSHAKEl_CH
-كتابه الزعيم 
+سوبر الزعيم 
 تعديل المطورين الفووك :)
 --]]
 local function check_member_super(cb_extra, success, result)
