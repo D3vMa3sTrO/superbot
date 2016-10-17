@@ -114,11 +114,11 @@ local function pre_process(msg)
 	  if msg.to.type == 'chat' or msg.to.type == 'channel' then
       if username then 
          savelog(msg.to.id, name_log.." @"..username.." ["..msg.from.id.."] kicked for #spam") 
-         send_large_msg(receiver , " 🎈 ممنوع التكرار تم طردك \n\n 🎈 معرفك : @"..username.."\n\n 🎈 ايديك : "..msg.from.id.."\n\n 🎈مطور البوت \n\n  @lIMyIl ")
+         send_large_msg(receiver , "🚫 | ممنوع التكرار "..msg.from.first_name.."\n🎈 | بسبب تكرار النشر تم اعتبارك\n🎈 | برمجيات خبيثه لتفليش الكروب \n🎈 | وتم حظرك من المجموعه تلقائيأ\n🎈 | عبر حمايه البوت \n⚠️ | معرف العضو : @"..(msg.from.username or "لا يوجد " ).."\n⚙الحالة : تم طرد العضو")
       else 
          savelog(msg.to.id, name_log.." ["..msg.from.id.."] kicked for #spam") 
-         send_large_msg(receiver , " 🎈 ممنوع التكرار تم طردك \n\n 🎈 معرفك : @"..username.."\n\n 🎈 ايديك : "..msg.from.id.."\n\n 🎈مـطـور البوت \n\n  @lIMyIl ")
-      end 
+         send_large_msg(receiver , "🚫 | ممنوع التكرار "..msg.from.first_name.."\n🎈 | بسبب تكرار النشر تم اعتبارك\n🎈 | برمجيات خبيثه لتفليش الكروب \n🎈 | وتم حظرك من المجموعه تلقائيأ\n🎈 | عبر حمايه البوت \n⚠️ | معرف العضو : @"..(msg.from.username or "لا يوجد " ).."\n⚙الحالة : تم طرد العضو")
+      end
      end 
       -- incr it on redis
       local gbanspam = 'gban:spam'..msg.from.id
