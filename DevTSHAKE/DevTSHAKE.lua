@@ -234,7 +234,7 @@ function create_config( )
     "html",
     "lock_inl",
     "banhammer",
-    "vip",
+    "set_team",
     "supergroup",
     "lock_fwd",
     "plugins",
