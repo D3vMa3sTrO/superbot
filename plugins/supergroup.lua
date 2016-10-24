@@ -1968,7 +1968,7 @@ local function run(msg, matches)
                 if not is_muted(chat_id, msg_type..': yes') then
                     savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
                     mute(chat_id, msg_type)
-                    return msg_type.. 'تم ☑️ قفل 🔐 الصوتيات في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return msg_type..' تم ☑️ قفل 🔐 الصوتيات في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
 
                 else
                     return ""..msg_type..' الصوتيات بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
@@ -1979,9 +1979,9 @@ local function run(msg, matches)
                 if not is_muted(chat_id, msg_type..': yes') then
                     savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
                     mute(chat_id, msg_type)
-                    return msg_type..'  تم ☑️ قفل 🔐 الصور في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return msg_type..' تم ☑️ قفل 🔐 الصور في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 else
-                    return ""..msg_type..'  الصور بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return ""..msg_type..' الصور بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
             if matches[2] == 'الفيديو' then
@@ -1989,9 +1989,9 @@ local function run(msg, matches)
                 if not is_muted(chat_id, msg_type..': yes') then
                     savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
                     mute(chat_id, msg_type)
-                      return msg_type..'  تم ☑️ قفل 🔐 الفيديو في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                      return msg_type..' تم ☑️ قفل 🔐 الفيديو في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 else
-                    return ""..msg_type..'  الفيديوهات بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return ""..msg_type..' الفيديوهات بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
             if matches[2] == 'الصور المتحركه' then
@@ -2001,7 +2001,7 @@ local function run(msg, matches)
                     mute(chat_id, msg_type)
                     return msg_type..'  تم ☑️ قفل 🔐 الصور المتحركه في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 else
-                    return ""..msg_type..'  الصور المتحركه بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return ""..msg_type..' الصور المتحركه بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
             if matches[2] == 'الفايلات' then
@@ -2009,7 +2009,7 @@ local function run(msg, matches)
                 if not is_muted(chat_id, msg_type..': yes') then
                     savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
                     mute(chat_id, msg_type)
-                    return msg_type..'  تم ☑️ قفل 🔐 الفايلات في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return msg_type..' تم ☑️ قفل 🔐 الفايلات في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 else
                     return ""..msg_type..' الفايلات بالتاكيد تم ☑️ قفلها 🔐  لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
@@ -2019,9 +2019,9 @@ local function run(msg, matches)
                 if not is_muted(chat_id, msg_type..': yes') then
                     savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
                     mute(chat_id, msg_type)
-                    return msg_type..'  تم ☑️ قفل 🔐 الدردشه في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return msg_type..' تم ☑️ قفل 🔐 الدردشه في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 else
-                    return ""..msg_type..'  الدردشه بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return ""..msg_type..' الدردشه بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
             if matches[2] == 'المجموعه' then
@@ -2029,9 +2029,9 @@ local function run(msg, matches)
                 if not is_muted(chat_id, msg_type..': yes') then
                     savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
                     mute(chat_id, msg_type)
-                    return "Mute "..msg_type..'     تم ☑️ قفل 🔐 المجموعه\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return "Mute "..msg_type..' تم ☑️ قفل 🔐 المجموعه\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 else
-                    return "Mute "..msg_type..'  المجموعه بالتاكيد تم ☑️ قفلها\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return "Mute "..msg_type..' المجموعه بالتاكيد تم ☑️ قفلها\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
         end
@@ -2044,7 +2044,7 @@ local function run(msg, matches)
                     unmute(chat_id, msg_type)
                     return msg_type..' تم ☑️ فتح 🔓 الصوتيات في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 else
-                    return ""..msg_type..'  الصوتيات بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return ""..msg_type..' الصوتيات بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
             if matches[2] == 'الصور' then
@@ -2052,9 +2052,9 @@ local function run(msg, matches)
                 if is_muted(chat_id, msg_type..': yes') then
                     savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute "..msg_type)
                     unmute(chat_id, msg_type)
-                    return msg_type..'  تم ☑️ فتح 🔓 الصور في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return msg_type..' تم ☑️ فتح 🔓 الصور في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 else
-                    return ""..msg_type..'  الصور بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return ""..msg_type..' الصور بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
             if matches[2] == 'الفيديو' then
@@ -2062,9 +2062,9 @@ local function run(msg, matches)
                 if is_muted(chat_id, msg_type..': yes') then
                     savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute "..msg_type)
                     unmute(chat_id, msg_type)
-                    return msg_type..'  تم ☑️ فتح 🔓 الفيديو في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return msg_type..' تم ☑️ فتح 🔓 الفيديو في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 else
-                    return ""..msg_type..'  الفيديو بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return ""..msg_type..' الفيديو بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
             if matches[2] == 'الصور المتحركه' then
@@ -2072,9 +2072,9 @@ local function run(msg, matches)
                 if is_muted(chat_id, msg_type..': yes') then
                     savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute "..msg_type)
                     unmute(chat_id, msg_type)
-                    return msg_type..'  تم ☑️ فتح 🔓 الصور المتحركه في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return msg_type..' تم ☑️ فتح 🔓 الصور المتحركه في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 else
-                    return ""..msg_type..'  الصور المتحركه بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return ""..msg_type..' الصور المتحركه بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
             if matches[2] == 'الفايلات' then
@@ -2082,9 +2082,9 @@ local function run(msg, matches)
                 if is_muted(chat_id, msg_type..': yes') then
                     savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute "..msg_type)
                     unmute(chat_id, msg_type)
-                    return msg_type..'  تم ☑️ فتح 🔓 الفايلات في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return msg_type..' تم ☑️ فتح 🔓 الفايلات في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 else
-                    return ""..msg_type..'  الفايلات بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return ""..msg_type..' الفايلات بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
             if matches[2] == 'الدردشه' then
@@ -2092,9 +2092,9 @@ local function run(msg, matches)
                 if is_muted(chat_id, msg_type..': yes') then
                     savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute message")
                     unmute(chat_id, msg_type)
-                    return msg_type..'  تم ☑️ فتح 🔓 الدردشه في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return msg_type..' تم ☑️ فتح 🔓 الدردشه في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 else
-                    return '  الدردشه بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك \nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return ' الدردشه بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك \nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
             if matches[2] == 'المجموعه' then
@@ -2102,9 +2102,9 @@ local function run(msg, matches)
                 if is_muted(chat_id, msg_type..': yes') then
                     savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute "..msg_type)
                     unmute(chat_id, msg_type)
-                    return " "..msg_type..'  تم ☑️ فتح 🔓 المجموعه في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return " "..msg_type..' تم ☑️ فتح 🔓 المجموعه في مجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 else
-                    return " "..msg_type..'  المجموعه بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+                    return " "..msg_type..' المجموعه بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
         end
