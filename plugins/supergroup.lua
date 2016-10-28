@@ -627,6 +627,34 @@ local function unlock_group_bots(msg, data, target)
     return 'تم ☑️ فتح 🔓 البوتات في مجموعتك\nبواسطه 🎈 ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
   end
 end
+
+local function lock_group_tgservice(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_tgservice_lock = data[tostring(target)]['settings']['lock_tgservice']
+  if group_tgservice_lock == 'yes' then
+    return 'الاشعارات بالتاكيد تم ☑️ قفله 🔐 لمجموعتك\nبواسطه 🎈 ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+  else
+    data[tostring(target)]['settings']['lock_tgservice'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'تم ☑️ قفل 🔐 الاشعارات في مجموعتك\nبواسطه 🎈 ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+  end
+end
+
+local function unlock_group_tgservice(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_tgservice_lock = data[tostring(target)]['settings']['lock_tgservice']
+  if group_tgservice_lock == 'no' then
+    return 'الاشعارات بالتاكيد تم ☑️ فتحه 🔓 لمجموعتك\nبواسطه 🎈 ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+  else
+    data[tostring(target)]['settings']['lock_tgservice'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'تم ☑️ فتح 🔓 الاشعارات في مجموعتك\nبواسطه 🎈 ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+  end
+end
 --End supergroup locks
 
 --'Set supergroup rules' function
@@ -1769,7 +1797,7 @@ local function run(msg, matches)
             end
             if matches[2] == 'الوصف' then
                 local receiver = get_receiver(msg)
-                local about_text = ' '
+                local about_text = ''
                 local data_cat = 'description'
                 if data[tostring(msg.to.id)][data_cat] == nil then
                     return 'عذرٱ ⚠️ لا يوجد وصف في المجموعه ليتم مسحه'
@@ -1866,6 +1894,10 @@ local function run(msg, matches)
 			        	savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked bots")
 			         	return lock_group_bots(msg, data, target)
 			      end
+	      		if matches[2] == 'الاشعارات' then
+			        	savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked Tgservice Actions")
+		        		return lock_group_tgservice(msg, data, target)
+	      		end
            end
 
         if matches[1] == 'فتح' and is_momod(msg) then
@@ -1934,6 +1966,10 @@ local function run(msg, matches)
 			         	savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked bots")
 			        	return unlock_group_bots(msg, data, target)
 			      end
+    				if matches[2] == 'الاشعارات' then
+	        			savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked tgservice actions")
+	        			return unlock_group_tgservice(msg, data, target)
+            end
         end
 
         if matches[1] == 'ضع تكرار' then
@@ -2331,7 +2367,6 @@ return {
     "^[#!/](القوانين)$",
     "^[#!/](ضع تكرار) (%d+)$",
     "^[#!/](مسح) (.*)$",
-    "^[#!/]([Hh]elpp)$",
     "^[#!/](اعدادات الوسائط)$",
     "^[#!/](المكتومين)$",
     "[#!/](mp) (.*)",
