@@ -1895,9 +1895,9 @@ local function run(msg, matches)
 			         	return lock_group_bots(msg, data, target)
 			      end
 	      		if matches[2] == 'الاشعارات' then
-			        	savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked join Actions")
-		        		return lock_group_join(msg, data, target)
-	      		end
+				        savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked join ")
+				        return lock_group_join(msg, data, target)
+			      end
            end
 
         if matches[1] == 'فتح' and is_momod(msg) then
@@ -1966,10 +1966,10 @@ local function run(msg, matches)
 			         	savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked bots")
 			        	return unlock_group_bots(msg, data, target)
 			      end
-    				if matches[2] == 'الاشعارات' then
-	        			savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked join actions")
-	        			return unlock_group_join(msg, data, target)
-            end
+	      		if matches[2] == 'الاشعارات' then
+				        savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked join")
+				        return unlock_group_join(msg, data, target)
+			      end
         end
 
         if matches[1] == 'ضع تكرار' then
