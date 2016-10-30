@@ -632,13 +632,13 @@ local function lock_group_join(msg, data, target)
   if not is_momod(msg) then
     return
   end
-  local group_join_lock = data[tostring(target)]['settings']['lock_join']
+  local group_join_lock = data[tostring(target)]['settings']['join']
   if group_join_lock == 'yes' then
-    return 'الاشعارات بالتاكيد تم ☑️ قفله 🔐 لمجموعتك\nبواسطه 🎈 ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+    return 'الدخول بالرابط بالتاكيد تم ☑️ قفله 🔐 لمجموعتك\nبواسطه 🎈 ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
   else
     data[tostring(target)]['settings']['lock_join'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'تم ☑️ قفل 🔐 الاشعارات في مجموعتك\nبواسطه 🎈 ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+    return 'تم ☑️ قفل 🔐 الدخول بالرابط في مجموعتك\nبواسطه 🎈 ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
   end
 end
 
@@ -648,9 +648,37 @@ local function unlock_group_join(msg, data, target)
   end
   local group_join_lock = data[tostring(target)]['settings']['lock_join']
   if group_join_lock == 'no' then
-    return 'الاشعارات بالتاكيد تم ☑️ فتحه 🔓 لمجموعتك\nبواسطه 🎈 ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+    return 'الدخول بالرابط بالتاكيد تم ☑️ فتحه 🔓 لمجموعتك\nبواسطه 🎈 ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
   else
     data[tostring(target)]['settings']['lock_join'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'تم ☑️ فتح 🔓 الدخول بالرابط في مجموعتك\nبواسطه 🎈 ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+  end
+end
+
+local function lock_group_tgservice(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_tgservice_lock = data[tostring(target)]['settings']['lock_tgservice']
+  if group_tgservice_lock == 'yes' then
+    return 'الاشعارات بالتاكيد تم ☑️ قفله 🔐 لمجموعتك\nبواسطه 🎈 ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+  else
+    data[tostring(target)]['settings']['lock_tgservice'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'تم ☑️ قفل 🔐 الاشعارات في مجموعتك\nبواسطه 🎈 ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+  end
+end
+
+local function unlock_group_join(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_tgservice_lock = data[tostring(target)]['settings']['lock_tgservice']
+  if group_tgservice_lock == 'no' then
+    return 'الاشعارات بالتاكيد تم ☑️ فتحه 🔓 لمجموعتك\nبواسطه 🎈 ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+  else
+    data[tostring(target)]['settings']['lock_tgservice'] = 'no'
     save_data(_config.moderation.data, data)
     return 'تم ☑️ فتح 🔓 الاشعارات في مجموعتك\nبواسطه 🎈 ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
   end
@@ -734,23 +762,99 @@ function show_supergroup_settingsmod(msg, target)
             NUM_MSG_MAX = 5
           end
     end
-    if data[tostring(target)]['settings'] then
-        if not data[tostring(target)]['settings']['public'] then
-            data[tostring(target)]['settings']['public'] = 'no'
+    local bots_protection = "Yes"
+    if data[tostring(target)]['settings']['lock_bots'] then
+    	bots_protection = data[tostring(target)]['settings']['lock_bots']
+   	end
+	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['public'] then
+			data[tostring(target)]['settings']['public'] = 'no'
+		end
+	end
+	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['lock_rtl'] then
+			data[tostring(target)]['settings']['lock_rtl'] = 'no'
+		end
         end
-    end
-    if data[tostring(target)]['settings'] then
-        if not data[tostring(target)]['settings']['lock_rtl'] then
-            data[tostring(target)]['settings']['lock_rtl'] = 'no'
-        end
-    end
-    if data[tostring(target)]['settings'] then
-        if not data[tostring(target)]['settings']['lock_member'] then
-            data[tostring(target)]['settings']['lock_member'] = 'no'
-        end
-    end
+      if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['lock_tgservice'] then
+			data[tostring(target)]['settings']['lock_tgservice'] = 'no'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['tag'] then
+			data[tostring(target)]['settings']['tag'] = 'no'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['emoji'] then
+			data[tostring(target)]['settings']['emoji'] = 'no'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['english'] then
+			data[tostring(target)]['settings']['english'] = 'no'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['fwd'] then
+			data[tostring(target)]['settings']['fwd'] = 'no'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['reply'] then
+			data[tostring(target)]['settings']['reply'] = 'no'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['join'] then
+			data[tostring(target)]['settings']['join'] = 'no'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['fosh'] then
+			data[tostring(target)]['settings']['fosh'] = 'no'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['username'] then
+			data[tostring(target)]['settings']['username'] = 'no'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['media'] then
+			data[tostring(target)]['settings']['media'] = 'no'
+		end
+	end
+	  if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['leave'] then
+			data[tostring(target)]['settings']['leave'] = 'no'
+		end
+	end
+	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['lock_member'] then
+			data[tostring(target)]['settings']['lock_member'] = 'no'
+		end
+	end
+	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['all'] then
+			data[tostring(target)]['settings']['all'] = 'no'
+		end
+	end
+	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['operator'] then
+			data[tostring(target)]['settings']['operator'] = 'no'
+		end
+	end
+	if data[tostring(target)]['settings'] then
+		if not data[tostring(target)]['settings']['etehad'] then
+			data[tostring(target)]['settings']['etehad'] = 'no'
+		end
+	end
+  local gp_type = data[tostring(msg.to.id)]['group_type']
+  
   local settings = data[tostring(target)]['settings']
-  local text = "🎈 اعدادات المجموعه 🎈\n🎈 قفل الروابط : "..settings.lock_link.."\n🎈 قفل التكرار : "..settings.flood.."\n🎈 عدد التكرار  : "..NUM_MSG_MAX.."\n🎈 قفل الكلايش الطويله: "..settings.lock_spam.."\n🎈 قفل اللغه العربيه: "..settings.lock_arabic.."\n🎈 قفل الاضافه: "..settings.lock_member.."\n🎈 قفل المغادره: "..settings.lock_rtl.."\n🎈 قفل الملصقات: "..settings.lock_sticker.."\n🎈 المراقبه: "..settings.public.."\n🎈 قفل جميع الاعدادات: "..settings.strict
+  local text = "🔺----------------------🔺\nاعدادات المجموعه :-\n🎈- اسم المجموعه : "..msg.to.title.."\n🔺----------------------🔺\n🎈 الروابط : "..settings.lock_link.."\n🎈 جهات الاتصال : "..settings.lock_contacts.."\n🎈 التكرار  : "..settings.flood.."\n🎈 عدد التكرار : "..NUM_MSG_MAX.."\n🎈 الاسبام : "..settings.lock_spam.."\n🎈 العربيه : "..settings.lock_arabic.."\n🎈 الانكليزيه : "..settings.english.."\n🎈 الاضافه : "..settings.lock_member.."\n🎈 الرتل : "..settings.lock_rtl.."\n🎈 اشعارات الدخول : "..settings.lock_tgservice.."\n \n🎈 الملصقات : "..settings.lock_sticker.."\n🎈 التاك : "..settings.tag.."\n🎈 الاسمايلات : "..settings.emoji.."\n🎈 البوتات : "..bots_protection.."\n🎈 اعاده توجيه : "..settings.fwd.."\n🎈 الرد : "..settings.reply.."\n🎈 الدخول : "..settings.join.."\n🎈 المعرف : "..settings.username.."\n🎈 الميديا: "..settings.media.."\n🎈 الكلمات السيئه: "..settings.fosh.."\n🎈 المغادره : "..settings.leave.."\n🎈 الكل : "..settings.all.."\n🔺----------------------🔺\n @lTSHAKEl_CH"
   return text
 end
 
@@ -1894,10 +1998,14 @@ local function run(msg, matches)
 			        	savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked bots")
 			         	return lock_group_bots(msg, data, target)
 			      end
-	      		if matches[2] == 'الاشعارات' then
+	      		if matches[2] == 'الدخول بالرابط' then
 				        savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked join ")
 				        return lock_group_join(msg, data, target)
 			      end
+			if matches[2] == 'الاشعارات' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked Tgservice Actions")
+				return lock_group_tgservice(msg, data, target)
+			end
            end
 
         if matches[1] == 'فتح' and is_momod(msg) then
@@ -1966,10 +2074,14 @@ local function run(msg, matches)
 			         	savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked bots")
 			        	return unlock_group_bots(msg, data, target)
 			      end
-	      		if matches[2] == 'الاشعارات' then
+	      		if matches[2] == 'الدخول بالرابط' then
 				        savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked join")
 				        return unlock_group_join(msg, data, target)
 			      end
+		        if matches[2] == 'الاشعارات' then
+				       savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked tgservice actions")
+				       return unlock_group_tgservice(msg, data, target)
+			end
         end
 
         if matches[1] == 'ضع تكرار' then
