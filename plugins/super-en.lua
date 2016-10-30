@@ -1,18 +1,11 @@
---[[
-#
-#ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
-#:((
-# For More Information ....! 
-# Developer : Aziz < @TH3_GHOST > 
-# our channel: @DevPointTeam
-# Version: 1.1
-#:))
-#ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
-#
-]]
---Begin supergrpup.lua
---Check members #Add supergroup
---channel : @DevPointTeam
+--[[ 
+    _____    _        _    _    _____    Dev @lIMyIl 
+   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
+     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
+     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
+     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
+              CH > @lTSHAKEl_CH
+--]]
 local function check_member_super(cb_extra, success, result)
   local receiver = cb_extra.receiver
   local data = cb_extra.data
@@ -2904,5 +2897,11 @@ return {
   pre_process = pre_process
 }
 
---@DevPointTeam
---@TH3_GHOST
+--[[ 
+    _____    _        _    _    _____    Dev @lIMyIl 
+   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
+     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
+     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
+     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
+              CH > @lTSHAKEl_CH
+--]]
