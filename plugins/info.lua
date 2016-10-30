@@ -165,7 +165,7 @@ local function run(msg, matches)
   return text
   end
   end
- if matches[1]:lower() == 'معلوماتي' and not matches[2] then
+ if matches[1]:lower() == 'معلوماتي' or matches[1]:lower() == 'info'  and not matches[2] then
   local receiver = get_receiver(msg)
   local Reply = msg.reply_id
   if msg.reply_id then
@@ -211,7 +211,7 @@ local function run(msg, matches)
      text = text..'🎈  اسم المجموعه : '..msg.to.title..'\n'
      text = text..'🎈  ايدي المجموعه : '..msg.to.id
     end
-  text = text..'🎈  مطور البوت @lIMyIl'..'\n'.."🎈 الرساله :- "..msg.text.."\n" 
+  text = text..'🎈 القناه :- @lTSHAKEl_CH'..'\n'.."🎈 الرساله :- "..msg.text.."\n" 
     return send_msg(receiver, text, ok_cb, true)
     end
   end
@@ -245,8 +245,8 @@ return {
     "^(معلوماتي)(.*)$",
     "^([Ss][Ee][Tt][Rr][Aa][Nn][Kk]) (%d+) (.*)$",
     "^([Ss][Ee][Tt][Rr][Aa][Nn][Kk]) (.*)$",
-    "^([Ii][Nn][Ff][Oo])$",
-    "^([Ii][Nn][Ff][Oo]) (.*)$",
+    "^[#!/]([Ii][Nn][Ff][Oo])$",
+    "^[#!/]([Ii][Nn][Ff][Oo]) (.*)$",
     "^[#!/](معلوماتي)$",
     "^[#!/](معلوماتي)(.*)$",
     "^([Ss][Ee][Tt][Rr][Aa][Nn][Kk]) (%d+) (.*)$",
