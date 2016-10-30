@@ -1584,14 +1584,14 @@ local function run(msg, matches)
             export_channel_link(receiver, callback_link, false)
         end
 
-        if matches[1] == 'ضع رابط' and is_owner(msg) then
+        if matches[1] == 'ضع رابط' and is_momod(msg) then
             data[tostring(msg.to.id)]['settings']['set_link'] = 'waiting'
             save_data(_config.moderation.data, data)
             return 'قم بارسال الرابط الخاص بك'
         end
 
         if msg.text then
-            if msg.text:match("^(https://telegram.me/joinchat/%S+)$") and data[tostring(msg.to.id)]['settings']['set_link'] == 'waiting' and is_owner(msg) then
+            if msg.text:match("^(https://telegram.me/joinchat/%S+)$") and data[tostring(msg.to.id)]['settings']['set_link'] == 'waiting' and is_momod(msg) then
                 data[tostring(msg.to.id)]['settings']['set_link'] = msg.text
                 save_data(_config.moderation.data, data)
                 return " 🎈 تم ☑️ حفظ الرابط "
@@ -1599,7 +1599,7 @@ local function run(msg, matches)
         end
 
         if matches[1] == 'الرابط' then
-            if not is_momod(msg) then
+            if is_momod(msg) then
                 return
             end
             local group_link = data[tostring(msg.to.id)]['settings']['set_link']
