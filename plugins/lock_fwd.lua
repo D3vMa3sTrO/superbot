@@ -24,13 +24,13 @@ local function pre_process(msg)
 local function moody(msg, matches)
     chat_id =  msg.to.id
     
-    if is_momod(msg) and matches[1] == 'قفل اعاده توجيه' then
+    if is_momod(msg) and matches[1] == 'قفل اعاده توجيه' or matches[1] == "c fd"  then
       
             
                     local hash = 'mate:'..msg.to.id
                     redis:set(hash, true)
                     return ""
-  elseif is_momod(msg) and matches[1] == 'فتح اعاده توجيه' then
+  elseif is_momod(msg) and matches[1] == 'فتح اعاده توجيه' or matches[1] == "o fd"  then
       local hash = 'mate:'..msg.to.id
       redis:del(hash)
       return ""
@@ -43,7 +43,11 @@ return {
         '^(قفل اعاده توجيه)$', 
         '^(فتح اعاده توجيه)$',
         '^[/!#](قفل اعاده توجيه)$', 
-        '^[/!#](فتح اعاده توجيه)$' 
+        '^[/!#](فتح اعاده توجيه)$',
+        '^(c fd)$', 
+        '^(o fd)$',
+        '^[/!#](c fd)$', 
+        '^[/!#](o fd)$'
     },
 run = moody,
 pre_process = pre_process 
