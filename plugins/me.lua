@@ -9,7 +9,7 @@
 do
 
 local function mohammedboss(msg, matches)
-  if matches[1] == 'موقعي' then
+  if matches[1] == 'موقعي' or matches[1] == 'me' then
     if is_sudo(msg) then
     send_document(get_receiver(msg), "./files/me/sudo.webp", ok_cb, false)
       return "🎈انت المطور مال اني 😻💋\n🎈 اسمك :"..msg.from.first_name.."\n" 
@@ -64,7 +64,11 @@ return {
     "^(موقعي)$",
     "^(موقعي)$",
     "^[#!/](موقعي)$",
-    "^[#!/](موقعي)$"
+    "^[#!/](موقعي)$",
+    "^(me)$",
+    "^(me)$",
+    "^[#!/](me)$",
+    "^[#!/](me)$"
     },
   run = mohammedboss
 }
