@@ -230,7 +230,7 @@ function create_config( )
     "invite",
     "kickme-ar",
     "kickme-en",
-    "lrave_ban",
+    "leave_ban",
     "lock_bot",
     "lock_user",
     "lock_inl",
