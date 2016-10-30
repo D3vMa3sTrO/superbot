@@ -65,11 +65,11 @@ end
 local function run(msg, matches)
 	local receiver = get_receiver(msg)
 	-- Enable a channel
-	if matches[1] == 'تشغيل البوت' then
+	if matches[1] == 'تشغيل البوت'  or matches[1] == 'bot on' then
 		return enable_channel(receiver)
 	end
 	-- Disable a channel
-	if matches[1] == 'اطفاء البوت' then
+	if matches[1] == 'اطفاء البوت'  or matches[1] == 'bot off' then
 		return disable_channel(receiver)
 	end
 end
@@ -81,7 +81,14 @@ return {
 		"Bot off: disable Bot In a Group" },
 	patterns = {
 		"^(تشغيل البوت)",
-		"^(اطفاء البوت)" }, 
+		"^(اطفاء البوت)", 
+		"^[#!/](تشغيل البوت)",
+		"^[#!/](اطفاء البوت)",
+		"^(bot on)",
+		"^(bot off)", 
+		"^[#!/](bot on)",
+		"^[#!/](bot off)"  
+	}, 
 	run = run,
 	privileged = true,
 	--moderated = true,
