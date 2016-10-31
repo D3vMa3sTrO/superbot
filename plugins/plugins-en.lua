@@ -161,7 +161,7 @@ end
 
 local function run(msg, matches)
   -- Show the available plugins 
-  if matches[1] == 'p' and is_sudo(msg) then --after changed to moderator mode, set only sudo
+  if matches[1] == 'pall' and is_sudo(msg) then --after changed to moderator mode, set only sudo
     return list_all_plugins()
   end
 
@@ -217,13 +217,13 @@ return {
           "!plugins reload : reloads all plugins." },
           },
   patterns = {
-    "^p",
+    "^pall",
     "^(p ac) ([%w_%.%-]+)$",
     "^(p an) ([%w_%.%-]+)$",
     "^(p ac) ([%w_%.%-]+) (chat)",
     "^(p an) ([%w_%.%-]+) (chat)",
     "^(p a)$",
-    "^[#!/](p)$",
+    "^[#!/](pall)$",
     "^[#!/](p ac) ([%w_%.%-]+)$",
     "^[#!/](p an) ([%w_%.%-]+)$",
     "^[#!/](p ac) ([%w_%.%-]+) (chat)",
