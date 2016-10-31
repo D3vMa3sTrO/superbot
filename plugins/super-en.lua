@@ -744,7 +744,7 @@ local function lock_group_tgservice(msg, data, target)
   end
 end
 
-local function unlock_group_join(msg, data, target)
+local function unlock_group_tgservice(msg, data, target)
   if not is_momod(msg) then
     return
   end
@@ -2263,7 +2263,7 @@ local function DevPointTeam(msg, matches)
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked rtl chars. in names")
 				return lock_group_rtl(msg, data, target)
 			end
-			if matches[2] == 'tgs' then
+			if matches[2] == 'ts' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked Tgservice Actions")
 				return lock_group_tgservice(msg, data, target)
 			end
@@ -2415,7 +2415,7 @@ local function DevPointTeam(msg, matches)
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked RTL chars. in names")
 				return unlock_group_rtl(msg, data, target)
 			end
-				if matches[2] == 'tgs' then
+				if matches[2] == 'ts' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked tgservice actions")
 				return unlock_group_tgservice(msg, data, target)
 			end
