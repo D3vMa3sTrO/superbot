@@ -15,7 +15,7 @@ end
 if matches[1] == 'b' then
   return '<b>'..mtn..'</b>'
 
-elseif matches[1] == 'c' then
+elseif matches[1] == 'co' then
   return '<code>'..mtn..'</code>'
 
 elseif matches[1] == 'hyper' then
@@ -28,7 +28,7 @@ return {
   description = "تست", 
   usage = "تست",
   patterns = {
-    "^[!#/]([Cc]) (.*)$",
+    "^[!#/]([Cc]o) (.*)$",
     "^[!#/]([Ii]) (.*)$",
     "^[!#/]([Bb]) (.*)$",
     "^[!#/]([Hh]yper) (.*) (.*)$"
