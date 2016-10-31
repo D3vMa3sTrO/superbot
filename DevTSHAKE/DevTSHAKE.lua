@@ -249,6 +249,7 @@ function create_config( )
     "save",
     "set_time",
     "stats",
+    "wlc",
     "super-ar",
     "super-en",
 
