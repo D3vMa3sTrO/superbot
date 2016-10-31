@@ -12,7 +12,7 @@ local rules = data[tostring(msg.to.id)]['rules']
 local about = data[tostring(msg.to.id)]['description']
 local hash = 'group:'..msg.to.id
 local group_welcome = redis:hget(hash,'welcome')
-if matches[1] == 'delwlc' and not matches[2] and is_owner(msg) then 
+if matches[1] == 'delwlc' or matches[1] == 'حذف الترحيب' and not matches[2] and is_momod(msg) then 
     
    redis:hdel(hash,'welcome')
         return 'تم حذف الترحيب بنجاح✅'
@@ -22,7 +22,7 @@ local url , res = http.request('http://api.gpmod.ir/time/')
 if res ~= 200 then return "No connection" end
 local jdat = json:decode(url)
 
-if is_momod(msg) and matches[1] == 'setwlc' then
+if is_momod(msg) and matches[1] == 'setwlc' or matches[1] == 'ضع ترحيب' then
 redis:hset(hash,'welcome',matches[2])
         return 'تم حفظ الترحيب💡'
 end
@@ -54,6 +54,12 @@ return {
   patterns = {
   "^[!/#](setwlc) +(.*)$",
   "^[!/#](delwlc)$",
+  "^(setwlc) +(.*)$",
+  "^(delwlc)$",
+  "^[!/#](ضع ترحيب) +(.*)$",
+  "^[!/#](حذف الترحيب)$",
+  "^(ضع ترحيب) +(.*)$",
+  "^(حذف الترحيب)$",
   "^!!tgservice (chat_add_user)$",
   "^!!tgservice (chat_add_user_link)$",
   },
