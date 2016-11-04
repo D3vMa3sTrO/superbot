@@ -2508,7 +2508,7 @@ local function DevPointTeam(msg, matches)
 
 		if matches[1] == 'c' and is_owner(msg) then
 			local chat_id = msg.to.id
-			if matches[2] == 'audio' then
+			if matches[2] == 'au' then
 			local msg_type = 'Audio'
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
@@ -2518,7 +2518,7 @@ local function DevPointTeam(msg, matches)
                     return ' الصوتيات بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
 			end
-			if matches[2] == 'photo' then
+			if matches[2] == 'ph' then
 			local msg_type = 'Photo'
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
@@ -2528,7 +2528,7 @@ local function DevPointTeam(msg, matches)
                     return ' الصور بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
 			end
-			if matches[2] == 'video' then
+			if matches[2] == 'vi' then
 			local msg_type = 'Video'
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
@@ -2538,7 +2538,7 @@ local function DevPointTeam(msg, matches)
                     return ' الفيديوهات بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
 			end
-			if matches[2] == 'gifs' then
+			if matches[2] == 'gi' then
 			local msg_type = 'Gifs'
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
@@ -2548,7 +2548,7 @@ local function DevPointTeam(msg, matches)
                     return ' الصور المتحركه بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
-			if matches[2] == 'doc' then
+			if matches[2] == 'dc' then
 			local msg_type = 'Documents'
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
@@ -2558,7 +2558,7 @@ local function DevPointTeam(msg, matches)
                     return ' الفايلات بالتاكيد تم ☑️ قفلها 🔐  لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
-			if matches[2] == 'text' then
+			if matches[2] == 'tx' then
 			local msg_type = 'Text'
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
@@ -2568,7 +2568,7 @@ local function DevPointTeam(msg, matches)
                     return ' الدردشه بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
-			if matches[2] == 'all' then
+			if matches[2] == 'gp' then
 			local msg_type = 'All'
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
@@ -2581,7 +2581,7 @@ local function DevPointTeam(msg, matches)
         end
 		if matches[1] == 'o' and is_momod(msg) then
 			local chat_id = msg.to.id
-			if matches[2] == 'audio' then
+			if matches[2] == 'au' then
 			local msg_type = 'Audio'
 				if is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute "..msg_type)
@@ -2591,7 +2591,7 @@ local function DevPointTeam(msg, matches)
                     return ' الصوتيات بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
-			if matches[2] == 'photo' then
+			if matches[2] == 'ph' then
 			local msg_type = 'Photo'
 				if is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute "..msg_type)
@@ -2601,7 +2601,7 @@ local function DevPointTeam(msg, matches)
                     return ' الصور بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
-			if matches[2] == 'video' then
+			if matches[2] == 'vi' then
 			local msg_type = 'Video'
 				if is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute "..msg_type)
@@ -2611,7 +2611,7 @@ local function DevPointTeam(msg, matches)
                     return ' الفيديو بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
-			if matches[2] == 'gifs' then
+			if matches[2] == 'gi' then
 			local msg_type = 'Gifs'
 				if is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute "..msg_type)
@@ -2621,7 +2621,7 @@ local function DevPointTeam(msg, matches)
                     return ' الصور المتحركه بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
-			if matches[2] == 'doc' then
+			if matches[2] == 'dc' then
 			local msg_type = 'Documents'
 				if is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute "..msg_type)
@@ -2631,7 +2631,7 @@ local function DevPointTeam(msg, matches)
                     return ' الفايلات بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك\nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
-			if matches[2] == 'text' then
+			if matches[2] == 'tx' then
 			local msg_type = 'Text'
 				if is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute message")
@@ -2641,7 +2641,7 @@ local function DevPointTeam(msg, matches)
                     return ' الدردشه بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك \nبواسطه 🎈  ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
                 end
             end
-			if matches[2] == 'all' then
+			if matches[2] == 'gp' then
 			local msg_type = 'All'
 				if is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute "..msg_type)
