@@ -48,12 +48,12 @@ local function mohammed (msg, matches)
   end
 
   local chatId = msg.to.id
-  if matches[1] == 'قفل البوتات' or matches[1] == "c bt" then
+  if matches[1] == 'قفل البوتات' then
     enableAntiBot(chatId)
     local text = ''
   return reply_msg(msg.id, text, ok_cb, false)
   end
-  if matches[1] == 'فتح البوتات' or matches[1] == "o bt"  then
+  if matches[1] == 'فتح البوتات' then
     disableAntiBot(chatId)
     local text = ''
   return reply_msg(msg.id, text, ok_cb, false)
@@ -86,10 +86,6 @@ return {
     '^(فتح البوتات)$',
     '^[#!/](قفل البوتات)$',
     '^[#!/](فتح البوتات)$',
-    '^(c bt)$',
-    '^(o bt)$',
-    '^[#!/](c bt)$',
-    '^[#!/](o bt)$',
     '^!!tgservice (chat_add_user)$',
     '^!!tgservice (chat_add_user_link)$'
   },
