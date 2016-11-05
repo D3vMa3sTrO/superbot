@@ -8,12 +8,12 @@
 --]]
 
 local function run(msg, matches)
-	if matches[1] == 'انشر' or matches[1] == 'an'  and is_admin1(msg) then
+	if matches[1] == 'انشر'  and is_admin1(msg) then
 		local response = matches[3]
 		--send_large_msg("chat#id"..matches[2], response)
 		send_large_msg("channel#id"..matches[2], response)
 	end
-	if matches[1] == 'اذاعه' or matches[1] == 'br' then
+	if matches[1] == 'اذاعه' then
 		if is_sudo(msg) then -- Only sudo !
 			local data = load_data(_config.moderation.data)
 			local groups = 'groups'
@@ -33,11 +33,7 @@ return {
     "^(اذاعه) +(.+)$",
     "^(انشر) (%d+) (.*)$",
     "^[!#/](اذاعه) +(.+)$",
-    "^[!#/](انشر) (%d+) (.*)$",
-    "^(br) +(.+)$",
-    "^(an) (%d+) (.*)$",
-    "^[!#/](br) +(.+)$",
-    "^[!#/](an) (%d+) (.*)$"
+    "^[!#/](انشر) (%d+) (.*)$"
   },
   run = run
 }
