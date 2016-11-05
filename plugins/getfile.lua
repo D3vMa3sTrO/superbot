@@ -7,7 +7,7 @@
               CH > @lTSHAKEl_CH
 --]]
 local function run(msg, matches)
-  if matches[1] == "send" or matches[1] == "جلب ملف"then
+  if matches[1] == "جلب ملف"then
     local file = matches[2]
     if is_sudo(msg) then --sudo only !
       local receiver = get_receiver(msg)
@@ -20,8 +20,6 @@ end
 
 return {
   patterns = {
-  "^(send) (.*)$",
-  "^[#!/](send) (.*)$",
   "^(جلب ملف) (.*)$",
   "^[#!/](جلب ملف) (.*)$"
   },
