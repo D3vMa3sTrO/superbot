@@ -65,11 +65,11 @@ end
 local function run(msg, matches)
 	local receiver = get_receiver(msg)
 	-- Enable a channel
-	if matches[1] == 'تشغيل البوت'  or matches[1] == 'bot on' then
+	if matches[1] == 'تشغيل البوت'  then
 		return enable_channel(receiver)
 	end
 	-- Disable a channel
-	if matches[1] == 'اطفاء البوت'  or matches[1] == 'bot off' then
+	if matches[1] == 'اطفاء البوت'  then
 		return disable_channel(receiver)
 	end
 end
@@ -83,11 +83,7 @@ return {
 		"^(تشغيل البوت)",
 		"^(اطفاء البوت)", 
 		"^[#!/](تشغيل البوت)",
-		"^[#!/](اطفاء البوت)",
-		"^(bot on)",
-		"^(bot off)", 
-		"^[#!/](bot on)",
-		"^[#!/](bot off)"  
+		"^[#!/](اطفاء البوت)"
 	}, 
 	run = run,
 	privileged = true,
