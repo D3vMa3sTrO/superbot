@@ -17,12 +17,12 @@ end
     end
     
  local function medo(msg, matches)
-if is_momod(msg) and matches[1] == "c" and matches[2] == "in" then
+if is_momod(msg) and matches[1] == "قفل" and matches[2] == "الانلاين" then
 local inline = 'mate:'..msg.to.id
 redis:set(inline, true)
 return "" 
 end
-if is_momod(msg) and matches[1] == "o" and matches[2] == "in" then
+if is_momod(msg) and matches[1] == "فتح" and matches[2] == "الانلاين" then
     local inline = 'mate:'..msg.to.id
     redis:del(inline)
     return "" 
@@ -34,10 +34,6 @@ return {
         '^(فتح) (الانلاين)$',
         '^[#!/](قفل) (الانلاين)$',
         '^[#!/](فتح) (الانلاين)$',
-        '^(c) (in)$',
-        '^(o) (in)$',
-        '^[#!/](c) (in)$',
-        '^[#!/](o) (in)$',
     },
 run = medo,
 pre_process = pre_process 
