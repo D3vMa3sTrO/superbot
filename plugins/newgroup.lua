@@ -736,7 +736,7 @@ function run(msg, matches)
 		end
  	end
 
-    if matches[1] == 'صنع مجموعه' or matches[1] == 'cg' and matches[2] then
+    if matches[1] == 'صنع مجموعه' and matches[2] then
         group_name = matches[2]
         group_type = 'group'
         return create_group(msg)
@@ -1053,8 +1053,6 @@ return {
   patterns = {
     "^(صنع مجموعه) (.*)$",
     "^[#!/](صنع مجموعه) (.*)$",
-    "^([Cc][Gg]) (.*)$",
-    "^[#!/]([Cc][Gg]) (.*)$",
     "^!!tgservice (.+)$",
   },
   run = run
