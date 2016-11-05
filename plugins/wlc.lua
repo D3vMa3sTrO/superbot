@@ -52,10 +52,6 @@ return group_welcome
 end
 return {
   patterns = {
-  "^[!/#](setwlc) +(.*)$",
-  "^[!/#](delwlc)$",
-  "^(setwlc) +(.*)$",
-  "^(delwlc)$",
   "^[!/#](ضع ترحيب) +(.*)$",
   "^[!/#](حذف الترحيب)$",
   "^(ضع ترحيب) +(.*)$",
