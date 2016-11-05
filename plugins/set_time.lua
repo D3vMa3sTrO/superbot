@@ -86,7 +86,7 @@ end
 return msg
 end
 function run(msg, matches)
-if matches[1]:lower() == 'set time' or matches[1]:lower() == 'وضع وقت' then
+if matches[1]:lower() == 'وضع وقت' then
 if not is_sudo(msg) then return end
 local time = os.time()
 local buytime = tonumber(os.time())
@@ -94,7 +94,7 @@ local timeexpire = tonumber(buytime) + (tonumber(matches[2]) * 86400)
 redis:hset('expiretime',get_receiver(msg),timeexpire)
 return " تم ☑️ وضع مدة انتهاء صلاحية الكروب الى  ("..matches[2].. ") "
 end
-if matches[1]:lower() == 'time' or matches[1]:lower() == 'تجديد' then
+if matches[1]:lower() == 'تجديد' then
 local expiretime = redis:hget ('expiretime', get_receiver(msg))
 if not expiretime then return ' لم يتم ☑️ تحديد التاريخ بنجاح' else
 local now = tonumber(os.time())
@@ -105,10 +105,6 @@ end
 end
 return {
 patterns = {
-"^(set time) (.*)$",
-"^(time)$",
-"^[#!/](set time) (.*)$",
-"^[#!/](time)$",
 "^(وضع وقت) (.*)$",
 "^(تجديد)$",
 "^[#!/](وضع وقت) (.*)$",
