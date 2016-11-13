@@ -663,11 +663,11 @@ local function lock_group_tgservice(msg, data, target)
   end
   local group_tgservice_lock = data[tostring(target)]['settings']['lock_tgservice']
   if group_tgservice_lock == 'yes' then
-    return 'الاشعارات بالتاكيد تم ☑️ قفله 🔐 لمجموعتك\nبواسطه 🎈 ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+    return 'الاشعارات بالتاكيد تم ☑️ قفله 🔐 لمجموعتك\nبواسطه 🎈 ➖ (@'..(msg.from.username or 'لا يوجد')..')\n'..'الرساله 🎈 ➖ '..msg.text..'\n'
   else
     data[tostring(target)]['settings']['lock_tgservice'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'تم ☑️ قفل 🔐 الاشعارات في مجموعتك\nبواسطه 🎈 ➖ @'..msg.from.username..'\n'.."الرساله 🎈  ➖ "..msg.text.."\n" 
+    return 'تم ☑️ قفل 🔐 الاشعارات في مجموعتك\nبواسطه 🎈 ➖ (@'..(msg.from.username or 'لا يوجد')..')\n'..'الرساله 🎈 ➖ '..msg.text..'\n'
   end
 end
 
@@ -2403,7 +2403,6 @@ return {
     "^[#!/](القوانين)$",
     "^[#!/](ضع تكرار) (%d+)$",
     "^[#!/](مسح) (.*)$",
-    "^[#!/]([Hh]elpp)$",
     "^[#!/](اعدادات الوسائط)$",
     "^[#!/](المكتومين)$",
     "[#!/](mp) (.*)",
