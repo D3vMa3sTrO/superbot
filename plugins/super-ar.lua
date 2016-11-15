@@ -2110,7 +2110,7 @@ local function run(msg, matches)
             end
         end
 
-		if matches[1] == 'قفل' and is_owner(msg) then
+		if matches[1] == 'قفل' and is_momod(msg) then
 			local chat_id = msg.to.id
 			if matches[2] == 'الصوت' then
 			local msg_type = 'Audio'
