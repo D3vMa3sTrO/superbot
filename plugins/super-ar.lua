@@ -2147,7 +2147,7 @@ local function run(msg, matches)
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
 					mute(chat_id, msg_type)
-    return 'تم ☑️ قفل 🔐 المتحركه في مجموعتك ����\nبواسطه 🔸--🔹 (@'..(msg.from.username or 'لا يوجد')..')\n'
+    return 'تم ☑️ قفل 🔐 المتحركه في مجموعتك 👥\nبواسطه 🔸--🔹 (@'..(msg.from.username or 'لا يوجد')..')\n'
                 else
     return 'المتحركه بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك 👥\nبواسطه 🔸--🔹 (@'..(msg.from.username or 'لا يوجد')..')\n'
                 end
