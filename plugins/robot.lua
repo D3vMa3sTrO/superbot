@@ -24,24 +24,24 @@ local function enable_channel(receiver)
 	end
 
 	if _config.disabled_channels[receiver] == nil then
-	return 'البوت بالتاكيد تم ☑️ تشغيله في المجموعه 🎈'
-	end
-	
-	_config.disabled_channels[receiver] = false
+return 'الـبـوت بـالـتـاكـيـد تـم ✅ تـشـغـيـله فـي الـمـجـمـوعـه 👥'
+  end
+  
+  _config.disabled_channels[receiver] = false
 
-	save_config()
-	return "تم ☑️ تشغيل البوت في المجموعه 🎈"
+  save_config()
+  return "تــم ✅ تـشـغـيـل الـبـوت فــي الـمـجـمـوعـه 👥"
 end
 
 local function disable_channel( receiver )
-	if not _config.disabled_channels then
+  if not _config.disabled_channels then
        _config.disabled_channels = {}
-	end
-	
-	_config.disabled_channels[receiver] = true
+  end
+  
+  _config.disabled_channels[receiver] = true
 
-	save_config()
-	return "تم ☑️ اطفاء البوت في المجموعه 🎈 "
+  save_config()
+  return "تــم ✅ اطـفـاء الـبـوت فـي الـمــجـمـوعـه 👥 "
 end
 
 local function pre_process(msg)
@@ -50,7 +50,7 @@ local function pre_process(msg)
 	-- If sender is moderator then re-enable the channel
 	--if is_sudo(msg) then
 	if is_momod(msg) then
-	  if msg.text == "تشغيل البوت" then
+	  if msg.text == "" then
 	    enable_channel(receiver)
 	  end
 	end
@@ -65,11 +65,11 @@ end
 local function run(msg, matches)
 	local receiver = get_receiver(msg)
 	-- Enable a channel
-	if matches[1] == 'تشغيل البوت'  then
+	if matches[1] == 'bot on' then
 		return enable_channel(receiver)
 	end
 	-- Disable a channel
-	if matches[1] == 'اطفاء البوت'  then
+	if matches[1] == 'bot off' then
 		return disable_channel(receiver)
 	end
 end
@@ -79,7 +79,7 @@ return {
 	usage = {
 		"Bot on: enable BOT In a Group",
 		"Bot off: disable Bot In a Group" },
-	patterns = {
+	patterns = {
 		"^(تشغيل البوت)",
 		"^(اطفاء البوت)", 
 		"^[#!/](تشغيل البوت)",
