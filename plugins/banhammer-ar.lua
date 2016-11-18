@@ -110,31 +110,31 @@ local function kick_ban_res(extra, success, result)
       local get_cmd = extra.get_cmd
        if get_cmd == "زحلكه" then
          if member_id == from_id then
-            send_large_msg(receiver, "🎈 لا تستطيع حظر نفسك 😐")
+            send_large_msg(receiver, "لــ⚠️ــا تـسـتـيــ❗️ــع حــظــر نـفـسـك🗣")
    return
          end
          if is_momod2(member_id, chat_id) and not is_admin2(sender) then
-            send_large_msg(receiver, "🎈 لا تستطيع طرد الادمنية او المدراء 😐")
+            send_large_msg(receiver, "لــ⚠️ــا تـسـتـيــ❗️ــع حــظــر الادمـــنـيــه👤")
    return
          end
    kick_user(member_id, chat_id)
       elseif get_cmd == 'حظر' then
         if is_momod2(member_id, chat_id) and not is_admin2(sender) then
-   send_large_msg(receiver, "🎈 لا تستطيع حضر الادمنية او المدراء 😅")
+   send_large_msg(receiver, "لــ⚠️ــا تـسـتـيــ❗️ــع حــظــر الادمـــنـيــه👤")
    return
         end
-        send_large_msg(receiver, '🎈 العضو @'..member..' حظرته وزحلكته 😂')
+        send_large_msg(receiver, 'الــعــضـــو @'..member..' \nتـــمـ⚠️ حـظــ❗️ــره مــن الـمـجـمـوعــه👥')
   ban_user(member_id, chat_id)
       elseif get_cmd == 'الغاء حظر' then
-        send_large_msg(receiver, '🎈 العضو @'..member..'  تم الغاء حظره  ☺️')
+        send_large_msg(receiver, 'الــعــضـــو @'..member..' \nتـــمـ☑️ الـــغـــاء حـظـــ❗️ـــره مــن الـمـجـمـوعــه👥')
         local hash =  'banned:'..chat_id
         redis:srem(hash, member_id)
-        return '🎈 العضو '..user_id..' حظرته وزحلكته 😂'
+        return 'الــعــضـــو ['..user_id..'] \n\nتـــمـ⚠️ حـظــ❗️ــره مــن الـمـجـمـوعــه👥'
       elseif get_cmd == 'حظر عام' then
-        send_large_msg(receiver, '🎈 العضو @'..member..' تم حظره من كل المجموعات 😅 ')
+        send_large_msg(receiver, 'الــعــضـــو [@'..member..'] \nتـــمـ⚠️ حـظــره مــ❗️ــن كـل الـمـجـمـوعــاتـ👥 ')
   banall_user(member_id)
       elseif get_cmd == 'الغاء العام' then
-        send_large_msg(receiver, '🎈 العضو @'..member..' تم الغاء حظره من كل المجموعات 🌚💋')
+        send_large_msg(receiver, '🎈 العضو [@'..member..'] \nتـــمـ⚠️ الـــغـــاء حـظــره مــ❗️ــن كـل الـمـجـمـوعــاتـ👥')
      unbanall_user(member_id)
     end
 end
@@ -191,17 +191,17 @@ local support_id = msg.from.id
           return
         end
         if not is_admin1(msg) and is_momod2(matches[2], msg.to.id) then
-           return "🎈 لا تستطيع حضر الادمنية او المدراء 😅"
+           return "لــ⚠️ــا تـسـتـيــ❗️ــع حــظــر الادمـــنـيــه👤"
         end
         if tonumber(matches[2]) == tonumber(msg.from.id) then
-           return "🎈 لا تستطيع حظر نفسك 😐"
+           return "لــ⚠️ــا تـسـتـيــ❗️ــع حــظــر نـفـسـك🗣"
         end
         local print_name = user_print_name(msg.from):gsub("‮", "")
      local name = print_name:gsub("_", "")
   local receiver = get_receiver(msg)
-        savelog(msg.to.id, name.." ["..msg.from.id.."] تم طرد العضو ".. matches[2])
+        savelog(msg.to.id, name.."الــعــضـــو ["..msg.from.id.."] \nتـــمـ⚠️ حـظــ❗️ــره مــن الـمـجـمـوعــه👥".. matches[2])
         ban_user(matches[2], msg.to.id)
-  send_large_msg(receiver, '🎈 العضو  ['..matches[2]..'] حظرته وزحلكته 😂')
+  send_large_msg(receiver, 'الــعــضـــو ['..matches[2]..'] \nتـــمـ⚠️ حـظــ❗️ــره مــن الـمـجـمـوعــه👥')
       else
   local cbres_extra = {
   chat_id = msg.to.id,
@@ -228,8 +228,8 @@ local support_id = msg.from.id
          redis:srem(hash, user_id)
          local print_name = user_print_name(msg.from):gsub("‮", "")
    local name = print_name:gsub("_", "")
-         savelog(msg.to.id, name.." ["..msg.from.id.."] unbaned user ".. matches[2])
-         return '🎈 العضو  '..user_id..' تم الغاء حظره 🌚💋'
+         savelog(msg.to.id, name.."الــعــضـــو ["..msg.from.id.."] \nتـــمـ☑️ الـــغـــاء حـظـــ❗️ـــره مــن الـمـجـمـوعــه👥 ".. matches[2])
+         return 'الــعــضـــو '..user_id..'] \nتـــمـ☑️ الـــغـــاء حـظـــ❗️ـــره مــن الـمـجـمـوعــه👥'
       else
   local cbres_extra = {
    chat_id = msg.to.id,
@@ -254,10 +254,10 @@ if matches[1]:lower() == 'زحلكه' then
    return
   end
   if not is_admin1(msg) and is_momod2(matches[2], msg.to.id) then
-   return "🎈 لا تستطيع طرد الادمنية او المدراء 😄"
+   return "لــ⚠️ــا تـسـتـيــ❗️ــع حــظــر الادمـــنـيــه👤"
   end
   if tonumber(matches[2]) == tonumber(msg.from.id) then
-   return "🎈 لا تستطيع طرد نفسك 😐"
+   return "لــ⚠️ــا تـسـتـيــ❗️ــع حــظــر نـفـسـك🗣"
   end
     local user_id = matches[2]
     local chat_id = msg.to.id
@@ -295,7 +295,7 @@ end
           return false
         end
          banall_user(targetuser)
-         return '🎈 العضو  ['..user_id..' ] تم حظره من كل المجموعات 🎈'
+         return 'الــعــضـــو ['..user_id..' ] \nتـــمـ⚠️ حـظــره مــ❗️ــن كـل الـمـجـمـوعــاتـ👥'
      else
  local cbres_extra = {
   chat_id = msg.to.id,
@@ -315,7 +315,7 @@ end
            return false
         end
          unbanall_user(user_id)
-         return '🎈 العضو  ['..user_id..' ] تم الغاء حظره من كل المجموعات ☺️'
+         return 'الــعــضـــو ['..user_id..' ] \nتـــمـ⚠️ الـــغـــاء حـظــره مــ❗️ــن كـل الـمـجـمـوعــاتـ👥'
     else
   local cbres_extra = {
    chat_id = msg.to.id,
@@ -345,7 +345,7 @@ return {
     "^(حظر) (.*)$",
     "^(الغاء حظر) (.*)$",
     "^(الغاء العام) (.*)$",
-    "^(الغاء العام)$",
+    "^(الغاء الغام)$",
     "^(زحلكه) (.*)$",
     "^(الغاء حظر)$",
     "^(ايدي)$",
@@ -355,6 +355,7 @@ return {
     "^[#!/](المحظورين)$",
     "^[#!/](قائمه العام)$",
 	"^[#!/](مغادره)",
+    "^[#!/](دي)$",
 	"^[#!/](حظر)$",
     "^[#!/](حظر) (.*)$",
     "^[#!/](الغاء حظر) (.*)$",
