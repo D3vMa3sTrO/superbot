@@ -176,42 +176,42 @@ local function run(msg, matches)
    else
    Username = '----'
    end
-   local text = '🎈  الاسم الاول : '..(msg.from.first_name or '----')..'\n'
-   local text = text..'🎈  الاسم الاخير : '..(msg.from.last_name or '----')..'\n'    
-   local text = text..'🎈  المعرف : '..Username..'\n'
-   local text = text..'🎈 رقم هاتفك : '..(msg.from.phone or 'لايوجد')..'\n'    
-   local text = text..'🎈 ايدي : '..msg.from.id..'\n'
-   local text = text..'🎈 اسم المجموعه : '..msg.to.title..'\n'
-   local text = text..'🎈 ايدي المجموعه : '..msg.to.id..'\n'
+local text = '🎐الاســم الاول 🗣 : '..(msg.from.first_name or '----')..'\n'
+   local text = text..'🎐الاســم الاخـيـر 🗣 : '..(msg.from.last_name or '----')..'\n'    
+   local text = text..'🎐الـمـعـرف ❗️ : '..Username..'\n'
+   local text = text..'🎐رقـم الـهـاتـف 🔶 : '..(msg.from.phone or 'لايوجد')..'\n'    
+   local text = text..'🎐ايـدي 🆔 : '..msg.from.id..'\n'
+   local text = text..'🎐اسـم الـمـجـمـوعـه 🗣 : '..msg.to.title..'\n'
+   local text = text..'🎐ايـدي الـمـجـمـوعـه 🆔 : '..msg.to.id..'\n'
    local hash = 'rank:'..msg.to.id..':variables'
     if hash then
       local value = redis:hget(hash, msg.from.id)
       if not value then
         if msg.from.id == tonumber(Arian) then
-         text = text..'🎈  رتبتك : Executive Admin \n\n'
+         text = text..'🎐رتـبـتـك 📝 : Executive Admin \n\n'
         elseif is_sudo(msg) then
-         text = text..'🎈  رتبتك :  المطور مالتي 😻🙊\n\n'
+         text = text..'🎐الــمــطــور 😍 : رتـبـتـك 📝\n\n'
         elseif is_owner(msg) then
-         text = text..'🎈  رتبتك :  مدير المجموعه 🌺😍\n\n'
+         text = text..'🎐المــديــر : رتـبـتـك 📝\n\n'
         elseif is_momod(msg) then
-         text = text..'🎈  رتبتك :  ادمن ☺️\n\n'
+         text = text..'🎐ادمــن : رتـبـتـك 📝\n\n'
         else
-         text = text..'🎈  رتبتك :  مجرد عضو 😒💔\n\n'
+         text = text..'🎐مـجرد عـضـو : رتـبـتـك 📝\n\n'
         end
       else
-       text = text..'🎈  رتبتك : '..value..'\n'
+       text = text..'🎐رتـبـتـك 📝 : '..value..'\n'
       end
     end
      local uhash = 'user:'..msg.from.id
       local user = redis:hgetall(uhash)
        local um_hash = 'msgs:'..msg.from.id..':'..msg.to.id
      user_info_msgs = tonumber(redis:get(um_hash) or 0)
-     text = text..'🎈  عدد الرسائل المرسله : '..user_info_msgs..'\n\n'
+     text = text..'🎐عـدد الـرسـايـل 🗣 : '..user_info_msgs..'\n\n'
     if msg.to.type == 'chat' then
-     text = text..'🎈  اسم المجموعه : '..msg.to.title..'\n'
-     text = text..'🎈  ايدي المجموعه : '..msg.to.id
+     text = text..'🎐اســم الـمـجـموعـه 👥 : '..msg.to.title..'\n'
+     text = text..'🎐ايـدي الـمـجـمـوعـه 👥 : '..msg.to.id
     end
-  text = text..'🎈 القناه :- @lTSHAKEl_CH'..'\n'.."🎈 الرساله :- "..msg.text.."\n" 
+  text = text..'🎐الــقــنــاه : @lTSHAKEl_CH'
     return send_msg(receiver, text, ok_cb, true)
     end
   end
