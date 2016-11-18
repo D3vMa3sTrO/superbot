@@ -13,7 +13,7 @@ local function create_group(msg)
     if is_sudo(msg) or is_realm(msg) and is_admin1(msg) then
 		local group_creator = msg.from.print_name
 		create_group_chat (group_creator, group_name, ok_cb, false)
-		return 'المجموعه  [ '..string.gsub(group_name, '_', ' ')..' ] 🎈 تم ☑️ صناعه المجموعه '
+		return 'الـمـجـمـوعـهـ👥  [ '..string.gsub(group_name, '_', ' ')..' ] \n تـمـ☑️ صـنـاعـه الـمـجـمـوعـه👥 '
 	end
 end
 
