@@ -13,7 +13,7 @@ local function mohammedboss(msg, matches)
     if is_sudo(msg) then
     send_document(get_receiver(msg), "./files/me/sudo.webp", ok_cb, false)
       return "انـ🗣ـت الـمـطـور مـ💋ـال انـي\n👤 اســمــك :"..msg.from.first_name.."\n" 
-   .."🗣| ايـديـك :("..msg.from.id..")\n" 
+   .."🎐| ايـديـك :("..msg.from.id..")\n" 
    .."💠| ايدي الكروب :("..msg.to.id..")\n" 
    .."👥| اسم الكروب :("..msg.to.title..")\n" 
    .."👤| معرفك :(@"..(msg.from.username or "لا يوجد")..")\n" 
@@ -21,7 +21,7 @@ local function mohammedboss(msg, matches)
     elseif is_admin1(msg) then
     send_document(get_receiver(msg), "./files/me/support.webp", ok_cb, false)
       return "انـ🗣ـت اداري😍\n👤 اســمــك :"..msg.from.first_name.."\n" 
-   .."🗣| ايـديـك :("..msg.from.id..")\n" 
+   .."🎐| ايـديـك :("..msg.from.id..")\n" 
    .."💠| ايدي الكروب :("..msg.to.id..")\n" 
    .."👥| اسم الكروب :("..msg.to.title..")\n" 
    .."👤| معرفك :(@"..(msg.from.username or "لا يوجد")..")\n" 
@@ -29,7 +29,7 @@ local function mohammedboss(msg, matches)
     elseif is_owner(msg) then
     send_document(get_receiver(msg), "./files/me/owner.webp", ok_cb, false)
       return "انـ🗣ـت مـديـ🌝ـرهـم\n👤 اســمــك :"..msg.from.first_name.."\n" 
-   .."🗣| ايـديـك :("..msg.from.id..")\n" 
+   .."🎐| ايـديـك :("..msg.from.id..")\n" 
    .."💠| ايدي الكروب :("..msg.to.id..")\n" 
    .."👥| اسم الكروب :("..msg.to.title..")\n" 
    .."👤| معرفك :(@"..(msg.from.username or "لا يوجد")..")\n" 
@@ -37,7 +37,7 @@ local function mohammedboss(msg, matches)
     elseif is_momod(msg) then
     send_document(get_receiver(msg), "./files/me/moderator.webp", ok_cb, false)
       return " انـ🗣ـت ادمن😸بـس لـتـ⚠️ـشـمـر\n👤 اســمــك :"..msg.from.first_name.."\n" 
-   .."🗣| ايـديـك :("..msg.from.id..")\n" 
+   .."🎐| ايـديـك :("..msg.from.id..")\n" 
    .."💠| ايدي الكروب :("..msg.to.id..")\n" 
    .."👥| اسم الكروب :("..msg.to.title..")\n" 
    .."👤| معرفك :(@"..(msg.from.username or "لا يوجد")..")\n" 
@@ -45,7 +45,7 @@ local function mohammedboss(msg, matches)
           else
     send_document(get_receiver(msg), "./files/me/member.webp", ok_cb, false)
       return "خـطـ⚠️ـيـه انـ🗣ـت عــضــو 😸\n👤 اســمــك :"..msg.from.first_name.."\n" 
-   .."🗣| ايـديـك :("..msg.from.id..")\n" 
+   .."🎐| ايـديـك :("..msg.from.id..")\n" 
    .."💠| ايدي الكروب :("..msg.to.id..")\n" 
    .."👥| اسم الكروب :("..msg.to.title..")\n" 
    .."👤| معرفك :(@"..(msg.from.username or "لا يوجد")..")\n" 
