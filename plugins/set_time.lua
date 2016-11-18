@@ -47,7 +47,7 @@ if get_receiver(msg) then
 redis:del('expiretime', get_receiver(msg))
 rem_mutes(msg.to.id)
 superrem2(msg)
-return send_large_msg(get_receiver(msg), 'تم ☑️ انتهاء تاريخ الصلاحية في المجموعة ')
+return send_large_msg(get_receiver(msg), 'تـم ✅ انـتـهـاء تـاريـخ الـصـلاحـيـة فـي المـجـمـوعـة👥 ')
 else
 return
 end
@@ -59,46 +59,46 @@ redis:hset('expires0',msg.to.id,'5')
 end
 if tonumber(timetoexpire) == 1 then
 if redis:hget('expires1',msg.to.id) then return msg end
-send_large_msg(get_receiver(msg), ' خلصن ايام التفعيل لهذه المجموعه \n اطلب من المطور  تجديد الوقت')
+send_large_msg(get_receiver(msg), '🗣 خـلـصـن ايـام الـتـفـعـيـل لـهـذه الـمجـموعه \n اطـلـب مـن المـطـور  تـجـديـد الـوقـت👥')
 redis:hset('expires1',msg.to.id,'5')
 end
 if tonumber(timetoexpire) == 2 then
 if redis:hget('expires2',msg.to.id) then return msg end
-send_large_msg(get_receiver(msg), 'يومين وتنتهي صلاحيه المجموعه \n اطلب من المطور  تجديد الوقت')
+send_large_msg(get_receiver(msg), '🗣يـومـيـن وتـنـتـهـي صـلاحيـه الـمـجـمـوعـه \n اطلـب مـن المـطـور  تـجديد الوقت👥')
 redis:hset('expires2',msg.to.id,'5')
 end
 if tonumber(timetoexpire) == 3 then
 if redis:hget('expires3',msg.to.id) then return msg end
-send_large_msg(get_receiver(msg), '3  ايام وتنتهي صلاحيه المجموعه \n اطلب من المطور  تجديد الوقت')
+send_large_msg(get_receiver(msg), '🗣 3  ايـام وتـنـتـهـي صلاحـيـه المـجـمـوعـه \n اطلـب من المـطـور  تجـديـد الـوقـت👥')
 redis:hset('expires3',msg.to.id,'5')
 end
 if tonumber(timetoexpire) == 4 then
 if redis:hget('expires4',msg.to.id) then return msg end
-send_large_msg(get_receiver(msg), 'اربعه ايام وتنتهي صلاحيه المجموعه \n اطلب من المطور  تجديد الوقت')
+send_large_msg(get_receiver(msg), '🗣 اربـعـه  ايـام وتـنـتـهـي صلاحـيـه المـجـمـوعـه \n اطلـب من المـطـور  تجـديـد الـوقـت👥')
 redis:hset('expires4',msg.to.id,'5')
 end
 if tonumber(timetoexpire) == 5 then
 if redis:hget('expires5',msg.to.id) then return msg end
-send_large_msg(get_receiver(msg), 'خمسه ايام وتنتهي صلاحيه المجموعه \n اطلب من المطور  تجديد الوقت')
+send_large_msg(get_receiver(msg), '🗣 خـمـسـه  ايـام وتـنـتـهـي صلاحـيـه المـجـمـوعـه \n اطلـب من المـطـور  تجـديـد الـوقـت👥')
 redis:hset('expires5',msg.to.id,'5')
 end
 end
 return msg
 end
 function run(msg, matches)
-if matches[1]:lower() == 'وضع وقت' then
+if matches[1]:lower() == 'وضع وقت'  then
 if not is_sudo(msg) then return end
 local time = os.time()
 local buytime = tonumber(os.time())
 local timeexpire = tonumber(buytime) + (tonumber(matches[2]) * 86400)
 redis:hset('expiretime',get_receiver(msg),timeexpire)
-return " تم ☑️ وضع مدة انتهاء صلاحية الكروب الى  ("..matches[2].. ") "
+return " تـم ✅ وضـع مـدة انـتـهاء صلاحـية الكـروب الـى  👥("..matches[2].. ") "
 end
-if matches[1]:lower() == 'تجديد' then
+if matches[1]:lower() == 'تجديد'  then
 local expiretime = redis:hget ('expiretime', get_receiver(msg))
-if not expiretime then return ' لم يتم ☑️ تحديد التاريخ بنجاح' else
+if not expiretime then return ' لـم يـتـم ❎ تـحـديـد التـاريـخ بنـجـاح' else
 local now = tonumber(os.time())
-return (math.floor((tonumber(expiretime) - tonumber(now)) / 86400) + 1) .. "تم تجديد مده الصلاحيه الى"
+return (math.floor((tonumber(expiretime) - tonumber(now)) / 86400) + 1) .. "تـم ✅ تـجديـد مـده الـصـلاحـيـه الـى👥"
 end
 end
 
