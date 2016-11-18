@@ -27,7 +27,6 @@ function run(msg, matches)
 ]].."\n"
 .."🔸--------------------------🔹".."\n"
 ..'🔺- CH - @lTSHAKEl_CH '..'\n'
-.."msg : "..msg.text.."\n" 
 ------------------
 
   elseif matches[1] == "م1" and is_momod(msg) then
@@ -71,7 +70,6 @@ function run(msg, matches)
 ]].."\n"
 .."🔸--------------------------🔹".."\n"
 ..'🔺- CH - @lTSHAKEl_CH '..'\n'
-.."msg : "..msg.text.."\n" 
 ------------------
 
 
@@ -95,7 +93,6 @@ function run(msg, matches)
 ]].."\n"
 .."🔸--------------------------🔹".."\n"
 ..'🔺- CH - @lTSHAKEl_CH '..'\n'
-.."msg : "..msg.text.."\n" 
 ------------------
 
   elseif  matches[1] == "م3" and is_momod(msg) then 
@@ -130,7 +127,6 @@ function run(msg, matches)
 ]].."\n"
 .."🔸--------------------------🔹".."\n"
 ..'🔺- CH - @lTSHAKEl_CH '..'\n'
-.."msg : "..msg.text.."\n" 
 ------------------
 
 
@@ -163,7 +159,6 @@ function run(msg, matches)
 ]].."\n"
 .."🔸--------------------------🔹".."\n"
 ..'🔺- CH - @lTSHAKEl_CH '..'\n'
-.."msg : "..msg.text.."\n" 
 -----------------------
 
  elseif  matches[1] == "م5" and is_sudo(msg) then 
@@ -211,7 +206,6 @@ function run(msg, matches)
 ]].."\n"
 .."🔸--------------------------🔹".."\n"
 ..'🔺- CH - @lTSHAKEl_CH '..'\n'
-.."msg : "..msg.text.."\n" 
 ------------------
   end
 end
