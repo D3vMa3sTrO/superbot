@@ -114,10 +114,10 @@ local function pre_process(msg)
 	  if msg.to.type == 'chat' or msg.to.type == 'channel' then
       if username then 
          savelog(msg.to.id, name_log.." @"..username.." ["..msg.from.id.."] kicked for #spam") 
-         send_large_msg(receiver , "🎈 | ممنوع التكرار "..msg.from.first_name.."\n🎈 | بسبب تكرار النشر تم اعتبارك\n🎈 | برمجيات خبيثه لتفليش الكروب \n🎈 | وتم حظرك من المجموعه تلقائيأ\n🎈 | عبر حمايه البوت \n🎈 | معرف العضو : @"..(msg.from.username or "لا يوجد " ).."\n🎈 الحالة : تم طرد العضو\n🎈 القناه :- @lTSHAKEl_CH ")
+send_large_msg(receiver , "⚠️ |  مـمـنـوع الـتـكـرار |🗣 "..msg.from.first_name.."\n⚠️ | بـسـبـب تـكـرار النـشـر تـم اعـتـبـارك |📛\n⚠️ | بـرمـجـيـات خـبيـثـه لـتـفـليـش الـكـروب |🤖 \n⚠️ | وتم حظرك من الـمـجـمـوعـه تلقائيأ |💠 \n⚠️ | عـبـر حـمـايـه الــبوت |👾 \n⚠️ | مـعـرف الــعــضــو |👤 : @"..(msg.from.username or "لا يوجد " ).."\n⚠️ | الــقــنــاه |✅ : @lTSHAKEl_CH ")
       else 
          savelog(msg.to.id, name_log.." ["..msg.from.id.."] kicked for #spam") 
-         send_large_msg(receiver , "🎈 | ممنوع التكرار "..msg.from.first_name.."\n🎈 | بسبب تكرار النشر تم اعتبارك\n🎈 | برمجيات خبيثه لتفليش الكروب \n🎈 | وتم حظرك من المجموعه تلقائيأ\n🎈 | عبر حمايه البوت \n🎈 | معرف العضو : @"..(msg.from.username or "لا يوجد " ).."\n🎈 الحالة : تم طرد العضو\n🎈 القناه :- @lTSHAKEl_CH ")
+send_large_msg(receiver , "⚠️ |  مـمـنـوع الـتـكـرار |🗣 "..msg.from.first_name.."\n⚠️ | بـسـبـب تـكـرار النـشـر تـم اعـتـبـارك |📛\n⚠️ | بـرمـجـيـات خـبيـثـه لـتـفـليـش الـكـروب |🤖 \n⚠️ | وتم حظرك من الـمـجـمـوعـه تلقائيأ |💠 \n⚠️ | عـبـر حـمـايـه الــبوت |👾 \n⚠️ | مـعـرف الــعــضــو |👤 : @"..(msg.from.username or "لا يوجد " ).."\n⚠️ | الــقــنــاه |✅ : @lTSHAKEl_CH ")
       end
      end 
       -- incr it on redis
