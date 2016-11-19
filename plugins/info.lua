@@ -188,18 +188,18 @@ local text = '🎐الاســم الاول 🗣 \n'..(msg.from.first_name or '-
       local value = redis:hget(hash, msg.from.id)
       if not value then
         if msg.from.id == tonumber(Arian) then
-         text = text..'🎐رتـبـتـك 📝 \nExecutive Admin \n\n'
+         text = text..'🎐رتـبـتـك 📝\n Executive Admin \n\n'
         elseif is_sudo(msg) then
-         text = text..'🎐الــمــطــور 😍 : رتـبـتـك 📝\n\n'
+         text = text..'🎐رتـبـتـك 📝\n الــمــطــور 😍 \n\n'
         elseif is_owner(msg) then
-         text = text..'🎐المــديــر \nرتـبـتـك 📝\n\n'
+         text = text..'🎐رتـبـتـك 📝\n المــديــر\n\n'
         elseif is_momod(msg) then
-         text = text..'🎐ادمــن \nرتـبـتـك 📝\n\n'
+         text = text..'🎐رتـبـتـك 📝\n ادمــن\n\n'
         else
-         text = text..'🎐مـجرد عـضـو \nرتـبـتـك 📝\n\n'
+         text = text..'🎐رتـبـتـك 📝\n مـجرد عـضـو\n'
         end
       else
-       text = text..'🎐رتـبـتـك 📝 \n'..value..'\n'
+       text = text..'🎐رتـبـتـك 📝\n '..value..'\n'
       end
     end
      local uhash = 'user:'..msg.from.id
@@ -259,4 +259,3 @@ end
 --By @TH3BOSS
 --By @ll60Kllbot
 --chennel @llDEV1ll
-
