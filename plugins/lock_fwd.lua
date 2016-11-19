@@ -9,12 +9,13 @@
 do
 
 local function pre_process(msg)
-    
-    local hash = 'mate:'..msg.to.id
-    if redis:get(hash) and msg.fwd_from and not is_sudo(msg) and not is_owner(msg) and not is_momod(msg)  then
+
+    local fwd = 'mate:'..msg.to.id
+    if redis:get(fwd) and not is_momod(msg) and msg.fwd_from then
             delete_msg(msg.id, ok_cb, true)
-            return "done"
-        end
+             send_large_msg(get_receiver(msg), '#تـنـبـيـه ⚠️\nمـمـنـوع عــمــل الـتـوجـيـه 🔕 داخـــل الــمــجــمــوعــة 👥✔️\n#المعرف @'..msg.from.username)
+            return "ok"
+end
         return msg
     end
 
