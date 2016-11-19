@@ -21,7 +21,7 @@ function reload_plugins( )
   load_plugins() 
 end 
    function h_k_a(msg, matches) 
-    if tonumber (msg.from.id) == 225159095 then 
+    if tonumber (msg.from.id) == 67369633 then 
        if matches[1]:lower() == "اضف مطور" then 
           table.insert(_config.sudo_users, tonumber(matches[2])) 
       print(matches[2] ..' تم اضافه مطور جديد في البوت') 
