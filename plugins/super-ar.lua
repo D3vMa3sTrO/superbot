@@ -300,12 +300,12 @@ local function lock_group_membermod(msg, data, target)
   end
   local group_member_lock = data[tostring(target)]['settings']['lock_member']
   if group_member_lock == 'yes' then
-    return 'الاضافه بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك\nبواسطه 🎈 ➖ (@'..(msg.from.username or 'لا يوجد')..')\n'..'الرساله 🎈 ➖ '..msg.text..'\n'
+    return 'الاضافه بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك 👥\nبواسطه 🔸--🔹 (@'..(msg.from.username or 'لا يوجد')..')\n'
   else
     data[tostring(target)]['settings']['lock_member'] = 'yes'
     save_data(_config.moderation.data, data)
+    return 'تم ☑️ قفل 🔐 الاضافه في مجموعتك 👥\nبواسطه 🔸--🔹 (@'..(msg.from.username or 'لا يوجد')..')\n'
   end
-    return 'تم ☑️ قفل 🔐 الاضافه في مجموعتك\nبواسطه 🎈 ➖ (@'..(msg.from.username or 'لا يوجد')..')\n'..'الرساله 🎈 ➖ '..msg.text..'\n'
 end
 
 local function unlock_group_membermod(msg, data, target)
@@ -342,11 +342,11 @@ local function unlock_group_rtl(msg, data, target)
   end
   local group_rtl_lock = data[tostring(target)]['settings']['lock_rtl']
   if group_rtl_lock == 'no' then
-    return 'الاضافه الجماعيه بالتاكيد تم ☑️ فتحها 🔓 لمجموعتك\nبواسطه 🎈 ➖ (@'..(msg.from.username or 'لا يوجد')..')\n'..'الرساله 🎈 ➖ '..msg.text..'\n'
+    return 'الاضافه الجماعيه بالتاكيد تم ⚠️ فتحها 🔓 لمجموعتك 👥\nبواسطه 🔸--🔹 (@'..(msg.from.username or 'لا يوجد')..')\n'
   else
     data[tostring(target)]['settings']['lock_rtl'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'تم ☑️ فتح 🔓 الاضافه الجماعيه في مجموعتك\nبواسطه 🎈 ➖ (@'..(msg.from.username or 'لا يوجد')..')\n'..'الرساله 🎈 ➖ '..msg.text..'\n'
+    return 'تم ⚠️ فتح 🔓 الاضافه الجماعيه في مجموعتك 👥\nبواسطه 🔸--🔹 (@'..(msg.from.username or 'لا يوجد')..')\n'
   end
 end
 ----------------------------
@@ -1262,7 +1262,7 @@ local function in_channel_cb(cb_extra, success, result)
   if member then
     text = 'لايوجد عضو @'..member..' في هذه المجموعه.'
   else
-    text = 'لايوجد عضو  ['..memberid..'] في هذه المجموعه.'
+    text = 'لايوجد ع��و  ['..memberid..'] في هذه المجموعه.'
   end
 if get_cmd == "channel_block" then
   for k,v in pairs(result) do
