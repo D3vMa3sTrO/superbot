@@ -1085,7 +1085,7 @@ function get_message_callback(extra, success, result)
         print(chat_id)
         if is_muted_user(chat_id, user_id) then
             unmute_user(chat_id, user_id)
-send_large_msg(receiver, " ["..user_id.."] \nتـمـ⚠️ـالـغـاء كـتـمـكـ🔕ـفـي للــمــجــمــوعــة👥 ")
+send_large_msg(receiver, " ["..user_id.."] \nتـمـ⚠️ الـغـاء كـتـمـك 🔕 فـي الــمــجــمــوعــة👥 ")
         elseif is_momod(msg) then
             mute_user(chat_id, user_id)
             send_large_msg(receiver, " ["..user_id.."] \nتـمـ☑️ـكـتـمـكـ🔕ـفـي للــمــجــمــوعــة👥")
