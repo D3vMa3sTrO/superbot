@@ -1088,7 +1088,7 @@ function get_message_callback(extra, success, result)
 send_large_msg(receiver, " ["..user_id.."] \nتـمـ⚠️ الـغـاء كـتـمـك 🔕 فـي الــمــجــمــوعــة👥 ")
         elseif is_momod(msg) then
             mute_user(chat_id, user_id)
-            send_large_msg(receiver, " ["..user_id.."] \nتـمـ☑️ـكـتـمـكـ🔕ـفـي للــمــجــمــوعــة👥")
+            send_large_msg(receiver, " ["..user_id.."] \nتـمـ☑️ كـتـمـك 🔕 فـي الــمــجــمــوعــة👥")
         end
 	end
 end
@@ -1240,10 +1240,10 @@ local function callbackres(extra, success, result)
         local chat_id = string.gsub(receiver, 'channel#id', '')
         if is_muted_user(chat_id, user_id) then
             unmute_user(chat_id, user_id)
-            send_large_msg(receiver, " ["..user_id.."] \nتـمـ⚠️ـالـغـاء كـتـمـكـ🔕ـفـي الــمــجــمــوعــة👥")
+            send_large_msg(receiver, " ["..user_id.."] \nتـمـ⚠️ الـغـاء كـتـمـك 🔕 فـي الــمــجــمــوعــة👥")
         elseif is_momod(extra.msg) then
             mute_user(chat_id, user_id)
-            send_large_msg(receiver, " ["..user_id.."] \nتـمـ☑️ـكـتـمـكـ🔕ـفـي الــمــجــمــوعــة👥")
+            send_large_msg(receiver, " ["..user_id.."] \nتـمـ☑️ كـتـمـك 🔕 فـي الــمــجــمــوعــة👥")
         end
 	end
 end
@@ -1739,10 +1739,10 @@ local function run(msg, matches)
         end
 
         if matches[1] == 'رفع ادمن' then
-          if not is_momod(msg) then
+          if not is_owner(msg) then
                 return
             end
-            if not is_momod(msg) then
+            if not is_owner(msg) then
                 return "للمــديــر🗣فـــــقـــــط⚠️"
             end
             if type(msg.reply_id) ~= "nil" then
@@ -2271,11 +2271,11 @@ local function run(msg, matches)
                 if is_muted_user(chat_id, user_id) then
                     unmute_user(chat_id, user_id)
                     savelog(msg.to.id, name_log.." ["..msg.from.id.."] removed ["..user_id.."] from the muted users list")
-                    return "["..user_id.."] \nتـمـ⚠️ـالـغـاء كـتـمـكـ🔕ـفـي الــمــجــمــوعــة👥"
+                    return "["..user_id.."] \nتـمـ⚠️ الـغـاء كـتـمـك 🔕 فـي الــمــجــمــوعــة👥"
 				elseif is_momod(msg) then
 					mute_user(chat_id, user_id)
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] added ["..user_id.."] to the muted users list")
-                    return "["..user_id.."] \nتـمـ☑️ـكـتـمـكـ🔕ـفـي الــمــجــمــوعــة👥"
+                    return "["..user_id.."] \nتـمـ☑️ كـتـمـك 🔕 فـي الــمــجــمــوعــة👥"
 				end
             elseif matches[1] == "كتم" and not string.match(matches[2], '^%d+$') then
                 local receiver = get_receiver(msg)
@@ -2430,7 +2430,7 @@ return {
     "^(مسح) (.*)$",
     "^[#!/]([Hh]elpp)$",
     "^(اع��ادات الوسائط)$",
-    "^(المكتومين)$",
+    "^(المكتوم��ن)$",
     "^[#!/](ت��عيل)$",
     "^[#!/](تعطيل)$",
     "^[#!/]([Mm]ove) (.*)$",
