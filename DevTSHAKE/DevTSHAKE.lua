@@ -236,6 +236,7 @@ function create_config( )
     "lock_cmd",
     "lock_join",
     "lock_fwd",
+    "lock_ads",
     "me",
     "msg_checks",
     "newgroup",
