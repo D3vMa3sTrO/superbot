@@ -684,6 +684,35 @@ local function unlock_group_tgservice(msg, data, target)
     return 'تم ⚠️ فتح 🔓 الاشعارات في مجموعتك 👥\nبواسطه 🔸--🔹 (@'..(msg.from.username or 'لا يوجد')..')\n'
   end
 end
+
+
+local function lock_group_ads(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_ads_lock = data[tostring(target)]['settings']['lock_ads']
+  if group_ads_lock == 'yes' then
+    return 'جميع الروابط بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك 👥\nبواسطه 🔸--🔹 (@'..(msg.from.username or 'لا يوجد')..')\n'
+  else
+    data[tostring(target)]['settings']['lock_ads'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'تم ☑️ قفل 🔐 جميع الروابط في مجموعتك 👥\nبواسطه 🔸--🔹 (@'..(msg.from.username or 'لا يوجد')..')\n'
+  end
+end
+
+local function unlock_group_ads(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_ads_lock = data[tostring(target)]['settings']['lock_ads']
+  if group_ads_lock == 'no' then
+    return 'جميع الروابط بالتاكيد تم ⚠️ فتحه 🔓 لمجموعتك 👥\nبواسطه 🔸--🔹 (@'..(msg.from.username or 'لا يوجد')..')\n'
+  else
+    data[tostring(target)]['settings']['lock_ads'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'تم ⚠️ فتح 🔓 جميع الروابط في مجموعتك 👥\nبواسطه 🔸--🔹 (@'..(msg.from.username or 'لا يوجد')..')\n'
+  end
+end
 --End supergroup locks
 
 --'Set supergroup rules' function
@@ -1262,7 +1291,7 @@ local function in_channel_cb(cb_extra, success, result)
   if member then
     text = 'لايوجد عضو @'..member..' في هذه المجموعه.'
   else
-    text = 'لايوجد ع��و  ['..memberid..'] في هذه المجموعه.'
+    text = 'لايوجد عضو  ['..memberid..'] في هذه المجموعه.'
   end
 if get_cmd == "channel_block" then
   for k,v in pairs(result) do
@@ -2007,6 +2036,10 @@ local function run(msg, matches)
 			        	savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked Tgservice Actions")
 		        		return lock_group_tgservice(msg, data, target)
 	      		end
+	      		if matches[2] == 'جميع الروابط' then
+				        savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked ads ")
+				        return lock_group_ads(msg, data, target)
+			      end
            end
 
         if matches[1] == 'فتح' and is_momod(msg) then
@@ -2082,7 +2115,11 @@ local function run(msg, matches)
 		        if matches[2] == 'الاشعارات' then
 				       savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked tgservice actions")
 				       return unlock_group_tgservice(msg, data, target)
-			end
+			      end
+	      		if matches[2] == 'جميع الروابط' then
+				        savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked ads")
+				        return unlock_group_ads(msg, data, target)
+			      end
         end
 
         if matches[1] == 'ضع تكرار' then
