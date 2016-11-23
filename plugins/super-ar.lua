@@ -1640,7 +1640,7 @@ local function run(msg, matches)
         end]]
 
             if matches[1] == 'رفع اداري' then
-                if not is_support(msg.from.id) and not is_owner(msg) then
+                if not is_support(msg.from.id) and not is_momod(msg) then
                     return
                 end
             if type(msg.reply_id) ~= "nil" then
@@ -1676,7 +1676,7 @@ local function run(msg, matches)
         end
 
         if matches[1] == 'تنزيل اداري' then
-            if not is_support(msg.from.id) and not is_owner(msg) then
+            if not is_support(msg.from.id) and not is_momod(msg) then
                 return
             end
             if type(msg.reply_id) ~= "nil" then
