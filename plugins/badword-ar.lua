@@ -37,7 +37,7 @@ function clear_commandbad(msg, var_name)
   --Save on redis  
   local hash = get_variables_hash(msg)
   redis:del(hash, var_name)
-  return '🗣تـمـ☑️ تـنـظـيـف قـ📝ـائـمـه الـمنـع'
+  return '🗣تـمـ☑️ تـنـظـيـف قـ📝ـائـمـه الـمنـع '
 end
 
 local function list_variables2(msg, value)
