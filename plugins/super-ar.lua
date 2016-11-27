@@ -999,7 +999,7 @@ function get_message_callback(extra, success, result)
     if is_momod2(member_id, channel_id) and not is_admin2(msg.from.id) then
                return send_large_msg("channel#id"..channel_id, " لــ⚠️ــا تـسـتـطـيـعــ🔕ــطــــرد الادمـــن👥")
     end
-    if is_admin2(member_id) then
+    if is_momod(member_id) then
          return send_large_msg("channel#id"..channel_id, " لــ⚠️ــا تـسـتـطـيـعــ🔕ــطــــرد الاداري👥")
     end
         --savelog(msg.to.id, name_log.." ["..msg.from.id.."] kicked: ["..user_id.."] by reply")
@@ -1771,9 +1771,6 @@ local function run(msg, matches)
           if not is_momod(msg) then
                 return
             end
-            if not is_owmer(msg) then
-                return "للمــديــر🗣فـــــقـــــط⚠️"
-            end
             if type(msg.reply_id) ~= "nil" then
                 local cbreply_extra = {
                     get_cmd = 'رفع ادمن',
@@ -1814,9 +1811,6 @@ local function run(msg, matches)
         if matches[1] == 'تنزيل ادمن' then
             if not is_momod(msg) then
                 return
-            end
-            if not is_owner(msg) then
-                return "للمــديــر🗣فـــــقـــــط⚠️"
             end
             if type(msg.reply_id) ~= "nil" then
                 local cbreply_extra = {
