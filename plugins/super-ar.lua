@@ -1905,10 +1905,7 @@ local function run(msg, matches)
             if not is_momod(msg) then
                 return
             end
-            if not is_owner(msg) then 
-                return "لـــلـــمــ🗣ــديـــر فـــقـــط⚠️" 
-            end 
-            if not is_momod(msg) then
+            if not is_owner(msg) then
                 return "للمــديــر🗣فـــــقـــــط⚠️"
             end
             if matches[2] == 'الادمنيه' then
