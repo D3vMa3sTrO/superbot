@@ -1771,6 +1771,9 @@ local function run(msg, matches)
           if not is_momod(msg) then
                 return
             end
+            if not is_owner(msg) then 
+                return "لـــلـــمــ🗣ــديـــر فـــقـــط⚠️" 
+            end 
             if type(msg.reply_id) ~= "nil" then
                 local cbreply_extra = {
                     get_cmd = 'رفع ادمن',
@@ -1812,6 +1815,9 @@ local function run(msg, matches)
             if not is_momod(msg) then
                 return
             end
+            if not is_owner(msg) then 
+                return "لـــلـــمــ🗣ــديـــر فـــقـــط⚠️" 
+            end 
             if type(msg.reply_id) ~= "nil" then
                 local cbreply_extra = {
                     get_cmd = 'تنزيل ادمن',
