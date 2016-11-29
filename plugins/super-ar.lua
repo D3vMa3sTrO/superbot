@@ -186,11 +186,11 @@ local function lock_group_links(msg, data, target)
   end
   local group_link_lock = data[tostring(target)]['settings']['lock_link']
   if group_link_lock == 'yes' then
-    return 'الروابط بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك 👥\nبواسطه |➖| (@'..(msg.from.username or 'لا يوجد')..')\n'
+    return 'الروابط بالتاكيد تم ☑️ قفلها 🔐 لمجموعتك 👥\nبواسطه 🔸--🔹 (@'..(msg.from.username or 'لا يوجد')..')\n'
   else
     data[tostring(target)]['settings']['lock_link'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'تم ☑️ قفل 🔐 الروابط في مجموعتك 👥\nبواسطه |➖| (@'..(msg.from.username or 'لا يوجد')..')\n'
+    return 'تم ☑️ قفل 🔐 الروابط في مجموعتك 👥\nبواسطه 🔸--🔹 (@'..(msg.from.username or 'لا يوجد')..')\n'
   end
 end
 
@@ -200,11 +200,11 @@ local function unlock_group_links(msg, data, target)
   end
   local group_link_lock = data[tostring(target)]['settings']['lock_link']
   if group_link_lock == 'no' then
-    return 'الروابط بالتاكيد تم ⚠️ فتحها 🔓 لمجموعتك 👥\nبواسطه |➖| (@'..(msg.from.username or 'لا يوجد')..')\n'
+    return 'الروابط بالتاكيد تم ⚠️ فتحها 🔓 لمجموعتك 👥\nبواسطه 🔸--🔹 (@'..(msg.from.username or 'لا يوجد')..')\n'
   else
     data[tostring(target)]['settings']['lock_link'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'تم ⚠️ فتح 🔓 الروابط في مجموعتك 👥\nبواسطه |➖| (@'..(msg.from.username or 'لا يوجد')..')\n'
+    return 'تم ⚠️ فتح 🔓 الروابط في مجموعتك 👥\nبواسطه 🔸--🔹 (@'..(msg.from.username or 'لا يوجد')..')\n'
     end
 end
 --------------------------------
