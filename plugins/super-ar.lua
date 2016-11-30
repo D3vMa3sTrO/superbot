@@ -453,8 +453,8 @@ local function unlock_group_username(msg, data, target)
   end
   local group_username_lock = data[tostring(target)]['settings']['username']
   if group_username_lock == 'no' then
-    return 'تم ☑️ قفل 🔐 المعرفات في مجموعتك 👥\nبواسطه 🔸--🔹 (@'..(msg.from.username or 'لا يوجد')..')\n'
-    else
+    return 'المعرفات بالتاكيد تم ⚠️ فتحها 🔓 لمجموعتك 👥\nبواسطه 🔸--🔹 (@'..(msg.from.username or 'لا يوجد')..')\n'
+    else
 data[tostring(target)]['settings']['username'] = 'no'
     save_data(_config.moderation.data, data)
     return 'تم ⚠️ فتح 🔓 المعرفات في مجموعتك 👥\nبواسطه 🔸--🔹 (@'..(msg.from.username or 'لا يوجد')..')\n'
