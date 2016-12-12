@@ -13,7 +13,6 @@ local function run(msg, matches)
     local chat = get_receiver(msg)
     local user = "user#id"..msg.from.id
     if lock_ads == "yes" then
-        send_large_msg(chat, '#تـنـبـيـه ⚠️\nمـمـنـوع ارســال الــروابــط 🔕 داخـــل الــمــجــمــوعــة 👥✔️\n#المعرف @'..msg.from.username)
        delete_msg(msg.id, ok_cb, true)
     end
 end
