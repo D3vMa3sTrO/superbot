@@ -1043,7 +1043,7 @@ function get_message_callback(extra, success, result)
     end
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] kicked: ["..user_id.."] by reply to sev. msg.")
         kick_user(user_id, channel_id)
-    elseif get_cmd == "مسح" then
+    elseif get_cmd == "احذف" then
         delete_msg(result.id, ok_cb, false)
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] deleted a message by reply")
     elseif get_cmd == "رفع اداري" then
@@ -1539,10 +1539,10 @@ local function run(msg, matches)
             channel_get_kicked(receiver, callback_kicked, {receiver = receiver})
         end
 
-        if matches[1] == 'مسح' and is_momod(msg) then
+        if matches[1] == 'احذف' and is_momod(msg) then
             if type(msg.reply_id) ~= "nil" then
                 local cbreply_extra = {
-                    get_cmd = 'مسح',
+                    get_cmd = 'احذف',
                     msg = msg
                 }
                 delete_msg(msg.id, ok_cb, false)
@@ -2479,7 +2479,7 @@ return {
     "^(ضع قوانين) (.*)$",
     "^(ضع صوره)$",
     "^(ضع معرف) (.*)$",
-    "^(مسح)$",
+    "^(احذف)$",
     "^(قفل) (.*)$",
     "^(فتح) (.*)$",
     "^(قفل) ([^%s]+)$",
@@ -2531,7 +2531,7 @@ return {
     "^[#!/](ضع قوانين) (.*)$",
     "^[#!/](ضع صوره)$",
     "^[#!/](ضع معرف) (.*)$",
-    "^[#!/](مسح)$",
+    "^[#!/](احذف)$",
     "^[#!/](قفل) (.*)$",
     "^[#!/](فتح) (.*)$",
     "^[#!/](قفل) ([^%s]+)$",
