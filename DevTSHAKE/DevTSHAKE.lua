@@ -52,11 +52,10 @@ end
 
 function msg_valid(msg)
   -- Don't process outgoing messages
-  if msg.out then
-    print('\27[36mNot valid: msg from us\27[39m')
+if msg.out then
+    print('')
     return false
   end
-
   -- Before bot was started
   if msg.date < os.time() - 5 then
     print('\27[36mNot valid: old msg\27[39m')
