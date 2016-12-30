@@ -713,6 +713,34 @@ local function unlock_group_ads(msg, data, target)
     return '#تـمـ⚠️ فـتـحـ🔓 #جـمـيـع_الـروابـط فـي الــمــجــمــوعــة 👥\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
   end
 end
+
+local function lock_group_media(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_media_lock = data[tostring(target)]['settings']['media']
+  if group_media_lock == 'yes' then
+    return '#المـيـديـا بـالـتـاكـيـد #تـمـ☑️ قـفـلـهـا 🔐 فـي الــمــجــمــوعــة 👥\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
+  else
+    data[tostring(target)]['settings']['media'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return '#تـمـ☑️ قـفـلـ🔐 #المـيـديـا فـي الــمــجــمــوعــة 👥\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
+  end
+end
+
+local function unlock_group_media(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_media_lock = data[tostring(target)]['settings']['media']
+  if group_media_lock == 'no' then
+    return '#المـيـديـا بـالـتـاكـيـد #تـمـ⚠️ فـتـحـهـا 🔓 فـي الــمــجــمــوعــة 👥\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
+  else
+    data[tostring(target)]['settings']['media'] = 'no'
+    save_data(_config.moderation.data, data)
+    return '#تـمـ⚠️ فـتـحـ🔓 #المـيـديـا فـي الــمــجــمــوعــة 👥\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
+  end
+end
 --End supergroup locks
 
 --'Set supergroup rules' function
@@ -2065,6 +2093,10 @@ local function run(msg, matches)
 				        savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked ads ")
 				        return lock_group_ads(msg, data, target)
 			      end
+	        	if matches[2] == 'الميديا' then
+				        savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked media")
+		        		return lock_group_media(msg, data, target)
+		      	end
            end
 
         if matches[1] == 'فتح' and is_momod(msg) then
@@ -2145,6 +2177,10 @@ local function run(msg, matches)
 				        savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked ads")
 				        return unlock_group_ads(msg, data, target)
 			      end
+					  if matches[2] == 'الميديا' then
+			         	savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked media")
+			        	return unlock_group_media(msg, data, target)
+		      	end
         end
 
         if matches[1] == 'ضع تكرار' then
@@ -2312,7 +2348,7 @@ if matches[1] == 'قفل' and is_momod(msg) then
     if is_muted(chat_id, msg_type..': yes') then
      savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: unmute "..msg_type)
      unmute(chat_id, msg_type)
-    return '#تـمـ☑️ فـتـحـ🔓 #الـمـجـمـوعـه 👥\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
+    return '#تـمـ☑️ فـتـحـ🔓 #الـ��ـجـمـوعـه 👥\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوج��')..')\n'
                 else
     return '#الـمـجـمـوعـه 👥 بـالـتـاكـيـد تـمـ⚠️ فـتـحـهـا 🔓\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
                 end
