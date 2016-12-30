@@ -5,8 +5,6 @@
      | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
      |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
               CH > @lTSHAKEl_CH
-سوبر الزعيم 
-تعديل المطورين الفووك :)
 --]]
 local function check_member_super(cb_extra, success, result)
   local receiver = cb_extra.receiver
@@ -711,34 +709,6 @@ local function unlock_group_ads(msg, data, target)
     data[tostring(target)]['settings']['lock_ads'] = 'no'
     save_data(_config.moderation.data, data)
     return '#تـمـ⚠️ فـتـحـ🔓 #جـمـيـع_الـروابـط فـي الــمــجــمــوعــة 👥\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
-  end
-end
-
-local function lock_group_media(msg, data, target)
-  if not is_momod(msg) then
-    return
-  end
-  local group_media_lock = data[tostring(target)]['settings']['media']
-  if group_media_lock == 'yes' then
-    return '#المـيـديـا بـالـتـاكـيـد #تـمـ☑️ قـفـلـهـا 🔐 فـي الــمــجــمــوعــة 👥\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
-  else
-    data[tostring(target)]['settings']['media'] = 'yes'
-    save_data(_config.moderation.data, data)
-    return '#تـمـ☑️ قـفـلـ🔐 #المـيـديـا فـي الــمــجــمــوعــة 👥\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
-  end
-end
-
-local function unlock_group_media(msg, data, target)
-  if not is_momod(msg) then
-    return
-  end
-  local group_media_lock = data[tostring(target)]['settings']['media']
-  if group_media_lock == 'no' then
-    return '#المـيـديـا بـالـتـاكـيـد #تـمـ⚠️ فـتـحـهـا 🔓 فـي الــمــجــمــوعــة 👥\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
-  else
-    data[tostring(target)]['settings']['media'] = 'no'
-    save_data(_config.moderation.data, data)
-    return '#تـمـ⚠️ فـتـحـ🔓 #المـيـديـا فـي الــمــجــمــوعــة 👥\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
   end
 end
 --End supergroup locks
@@ -2093,10 +2063,6 @@ local function run(msg, matches)
 				        savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked ads ")
 				        return lock_group_ads(msg, data, target)
 			      end
-	        	if matches[2] == 'الميديا' then
-				        savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked media")
-		        		return lock_group_media(msg, data, target)
-		      	end
            end
 
         if matches[1] == 'فتح' and is_momod(msg) then
@@ -2177,10 +2143,6 @@ local function run(msg, matches)
 				        savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked ads")
 				        return unlock_group_ads(msg, data, target)
 			      end
-					  if matches[2] == 'الميديا' then
-			         	savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked media")
-			        	return unlock_group_media(msg, data, target)
-		      	end
         end
 
         if matches[1] == 'ضع تكرار' then
@@ -2595,8 +2557,6 @@ return {
   run = run,
   pre_process = pre_process
 }
---End supergrpup.lua
---By @TH3BOSS
 
 --[[ 
     _____    _        _    _    _____    Dev @lIMyIl 
