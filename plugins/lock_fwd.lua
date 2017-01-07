@@ -22,7 +22,6 @@ local function pre_process(msg)
             delete_msg(msg.id, ok_cb, true)
             delete_msg(msg.id, ok_cb, true)
             delete_msg(msg.id, ok_cb, true)
-             send_large_msg(get_receiver(msg), '#تـنـبـيـه ⚠️\nمـمـنـوع عــمــل الـتـوجـيـه 🔕 داخـــل الــمــجــمــوعــة 👥✔️\n#المعرف @'..msg.from.username)
             return "ok"
 end
         return msg
