@@ -9,7 +9,7 @@
 local function addword(msg, name)
     local hash = 'chat:'..msg.to.id..':badword'
     redis:hset(hash, name, 'newword')
-    return "تـمـ⚠️ اضـافـه الكـلـ❗️ـمـه الـى قائـمـه الـمـنـ🗣\n>"..name
+   return "تـمـ⚠️ اضـافـه الكـلـ❗️ـمـه الـى قائـمـه الـمـنـع🗣\n>"..name
 end
 
 local function get_variables_hash(msg)
