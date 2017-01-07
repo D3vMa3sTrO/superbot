@@ -2178,7 +2178,7 @@ if matches[1] == 'قفل' and is_momod(msg) then
      mute(chat_id, msg_type)
     return '#تـمـ☑️ قـفـلـ #الـصـوتـ فـي \n| '..msg.to.title..' |\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
     else
-    return '#الـصـوتـ بـالـتـاكـيـد #تـمـ☑️ قـفـلـهـا فـي \n| '..msg.to.title..' |\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
+    return '#الـصـوتـ بـالـتـاكـيـد #تـمـ☑️ قـفـلـه فـي \n| '..msg.to.title..' |\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
     end
    end
    if matches[2] == 'الصور' then
@@ -2198,7 +2198,7 @@ if matches[1] == 'قفل' and is_momod(msg) then
      mute(chat_id, msg_type)
     return '#تـمـ☑️ قـفـلـ #الـفـيـديـو فـي \n| '..msg.to.title..' |\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
     else
-    return '#الـفـيـديـو بـالـتـاكـيـد #تـمـ☑️ قـفـلـهـا فـي \n| '..msg.to.title..' |\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
+    return '#الـفـيـديـو بـالـتـاكـيـد #تـمـ☑️ قـفـلـه فـي \n| '..msg.to.title..' |\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
     end
    end
    if matches[2] == 'المتحركه' then
@@ -2251,7 +2251,7 @@ if matches[1] == 'قفل' and is_momod(msg) then
      unmute(chat_id, msg_type)
     return '#تـمـ⚠️ فـتـحـ #الـصـوتـ فـي \n| '..msg.to.title..' |\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
     else
-    return '#الـصـوتـ بـالـتـاكـيـد #تـمـ⚠️ فـتـحـهـا فـي \n| '..msg.to.title..' |\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
+    return '#الـصـوتـ بـالـتـاكـيـد #تـمـ⚠️ فـتـحـه فـي \n| '..msg.to.title..' |\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
     end
             end
    if matches[2] == 'الصور' then
@@ -2271,7 +2271,7 @@ if matches[1] == 'قفل' and is_momod(msg) then
      unmute(chat_id, msg_type)
     return '#تـمـ⚠️ فـتـحـ #الـفـيـديـو فـي \n| '..msg.to.title..' |\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
     else
-    return '#الـفـيـديـو بـالـتـاكـيـد #تـمـ⚠️ فـتـحـهـا فـي \n| '..msg.to.title..' |\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
+    return '#الـفـيـديـو بـالـتـاكـيـد #تـمـ⚠️ فـتـحـه فـي \n| '..msg.to.title..' |\n#بواسطه |❗️| (@'..(msg.from.username or 'لا يوجد')..')\n'
     end
             end
    if matches[2] == 'المتحركه' then
