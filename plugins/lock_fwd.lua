@@ -13,15 +13,6 @@ local function pre_process(msg)
     local fwd = 'mate:'..msg.to.id
     if redis:get(fwd) and not is_momod(msg) and msg.fwd_from then
             delete_msg(msg.id, ok_cb, true)
-            delete_msg(msg.id, ok_cb, true)
-            delete_msg(msg.id, ok_cb, true)
-            delete_msg(msg.id, ok_cb, true)
-            delete_msg(msg.id, ok_cb, true)
-            delete_msg(msg.id, ok_cb, true)
-            delete_msg(msg.id, ok_cb, true)
-            delete_msg(msg.id, ok_cb, true)
-            delete_msg(msg.id, ok_cb, true)
-            delete_msg(msg.id, ok_cb, true)
             return "ok"
 end
         return msg
