@@ -247,7 +247,9 @@ function create_config( )
     "stats",
     "wlc",
     "super-ar",
-
+    "warnall",
+    "lock_media",
+    "warn_edit",
     },
     sudo_users = {67369633},--Sudo users
     moderation = {data = 'data/moderation.json'},
