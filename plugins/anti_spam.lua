@@ -98,8 +98,8 @@ local function pre_process(msg)
 		print(msgs)
 		if msgs >= max_msg then
 			print("Pass2")
-			send_large_msg("user#id"..msg.from.id, "User ["..msg.from.id.."] blocked for spam.")
-			savelog(msg.from.id.." PM", "User ["..msg.from.id.."] blocked for spam.")
+      send_large_msg("user#id"..msg.from.id, "⚠️ |  مـمـنـوع الـتـكـرار |🗣 "..msg.from.first_name.."\n⚠️ | بـسـبـب تـكـرار النـشـر |📛\n⚠️ | تم حظرك تلقائيأ \n⚠️ | مـعـرفـك |👥 : @"..(msg.from.username or "لا يوجد " ).."\n⚠️ | الــقــنــاه |🔰 : @lTSHAKEl_CH ")
+			savelog(msg.from.id.." PM", "⚠️ |  مـمـنـوع الـتـكـرار |🗣 "..msg.from.first_name.."\n⚠️ | بـسـبـب تـكـرار النـشـر |📛\n⚠️ | تم حظرك تلقائيأ \n⚠️ | مـعـرفـك |👥 : @"..(msg.from.username or "لا يوجد " ).."\n⚠️ | الــقــنــاه |🔰 : @lTSHAKEl_CH ")
 			block_user("user#id"..msg.from.id,ok_cb,false)--Block user if spammed in private
 		end
       end
