@@ -37,7 +37,8 @@ return {patterns = {
 "http://(.*)",
 "www.(.*)",
 "WWW.(.*)",
-
+"^(https://t.me/)$",
+"[Tt].[Mm][Ee]/",
   },
   run = run
 }
