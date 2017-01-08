@@ -223,7 +223,6 @@ function create_config( )
     "helpall",
     "html",
     "info",
-    "ingroup",
     "invite",
     "kickme-ar",
     "leave_ban",
