@@ -243,7 +243,6 @@ function create_config( )
     "robot",
     "save",
     "set_time",
-    "stats",
     "wlc",
     "super-ar",
     "warnall",
