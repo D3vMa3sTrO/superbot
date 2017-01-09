@@ -143,7 +143,7 @@ local function run(msg, matches)
 local support_id = msg.from.id
  if matches[1]:lower() == 'ايدي' and msg.to.type == "chat" or msg.to.type == "user" then
     if msg.to.type == "user" then
-      return "🎈   ايدي البوت : "..msg.to.id.. "\n\n🎈   ايدي حسابك : "..msg.from.id.. "\n\n🎈   المطور :  @lIMyIl "
+      return " 🔰ايـدي الـبـوتـ : "..msg.to.id.. "\n🔰 ايـدي حـسـابـكـ : "..msg.from.id.. "\n🔰 قـنـاه الـسـورسـ :  @lTSHAKEl_CH "
     end
     if type(msg.reply_id) ~= "nil" then
       local print_name = user_print_name(msg.from):gsub("‮", "")
