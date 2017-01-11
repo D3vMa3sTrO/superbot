@@ -3,14 +3,15 @@
  تـم التعـريب بواسـطة @b7_7b 
  قنــــاتــــنــا : @b7_78     
 القنــــاة يلي اخــذت منهــــا المــــلف : @DeV_s_o
---]]   
+--]]    
 --[[ 
     _____    _        _    _    _____    Dev @lIMyIl 
    |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
      | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
      | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
      |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
---]] 
+              CH > @lTSHAKEl_CH
+--]]
 do
 
 
@@ -58,7 +59,7 @@ function lock_edit(msg)
 
       promote(msg.to.id,"@DeleteEditbot",290793242) 
 
-    channel_invite(get_receiver(msg),"user#id322287948",ok_cb,false)
+    channel_invite(get_receiver(msg),"user#id290793242",ok_cb,false)
 
     redis:del("lock:edit:"..msg.to.id,true)
 
@@ -130,7 +131,7 @@ function run(msg,matches)
 
   if matches[2] == "التعديل" and is_momod(msg) then
 
-  if matches[1] == "فتح" then
+  if matches[1] == "قفل" then
 
     if msg.to.type == "channel" then
 
@@ -142,7 +143,7 @@ function run(msg,matches)
 
     end
 
-  elseif matches[1] == "قفل" then
+  elseif matches[1] == "فتح" then
 
     if msg.to.type == "channel" then
 
@@ -166,9 +167,9 @@ return {
 
   patterns = {
 
-    "^[!/#](قفل) (التعديل)$",
+    "^(قفل) (التعديل)$",
 
-    "^[!/#](فتح) (التعديل)$"
+    "^(فتح) (التعديل)$",
 
   },
 
@@ -193,4 +194,5 @@ end
      | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
      | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
      |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
+              CH > @lTSHAKEl_CH
 --]]
