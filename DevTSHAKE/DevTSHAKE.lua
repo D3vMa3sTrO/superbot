@@ -235,6 +235,8 @@ function create_config( )
     "lock_join",
     "lock_fwd",
     "lock_ads",
+    "lock_media",
+    "lock_edit",
     "me",
     "msg_checks",
     "newgroup",
@@ -246,7 +248,6 @@ function create_config( )
     "wlc",
     "super-ar",
     "warnall",
-    "lock_media",
     "warn_edit",
     },
     sudo_users = {67369633},--Sudo users
