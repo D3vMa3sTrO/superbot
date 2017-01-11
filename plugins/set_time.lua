@@ -5,7 +5,6 @@
      | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
      |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
               CH > @lTSHAKEl_CH
-كتابه المطور @kasper_dev
 --]]
 local function check_member_superrem2(cb_extra, success, result)
 local receiver = cb_extra.receiver
@@ -69,7 +68,7 @@ redis:hset('expires2',msg.to.id,'5')
 end
 if tonumber(timetoexpire) == 3 then
 if redis:hget('expires3',msg.to.id) then return msg end
-send_large_msg(get_receiver(msg), '🗣 3  ايـام وتـنـتـهـي صلاحـيـه المـجـمـوعـه \n اطلـب من المـطـور  تجـديـد الـوقـت👥')
+send_large_msg(get_receiver(msg), '🗣 ثـلـاثـه  ايـام وتـنـتـهـي صلاحـيـه المـجـمـوعـه \n اطلـب من المـطـور  تجـديـد الـوقـت👥')
 redis:hset('expires3',msg.to.id,'5')
 end
 if tonumber(timetoexpire) == 4 then
