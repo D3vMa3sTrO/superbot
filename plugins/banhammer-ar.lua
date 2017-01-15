@@ -110,17 +110,17 @@ local function kick_ban_res(extra, success, result)
       local get_cmd = extra.get_cmd
        if get_cmd == "زحلكه" then
          if member_id == from_id then
-            send_large_msg(receiver, "لــ⚠️ــا تـسـتـيــ❗️ــع حــظــر نـفـسـك🗣")
+            send_large_msg(receiver, "لــ⚠️ــا تـسـتـطـيــ❗️ــع حــظــر نـفـسـك🗣")
    return
          end
          if is_momod2(member_id, chat_id) and not is_admin2(sender) then
-            send_large_msg(receiver, "لــ⚠️ــا تـسـتـيــ❗️ــع حــظــر الادمـــنـيــه👤")
+            send_large_msg(receiver, "لــ⚠️ــا تـسـتـطـيــ❗️ــع حــظــر الادمـــنـيــه👤")
    return
          end
    kick_user(member_id, chat_id)
       elseif get_cmd == 'حظر' then
         if is_momod2(member_id, chat_id) and not is_admin2(sender) then
-   send_large_msg(receiver, "لــ⚠️ــا تـسـتـيــ❗️ــع حــظــر الادمـــنـيــه👤")
+            send_large_msg(receiver, "لــ⚠️ــا تـسـتـطـيــ❗️ــع حــظــر الادمـــنـيــه👤")
    return
         end
         send_large_msg(receiver, 'الــعــضـــو @'..member..' \nتـــمـ⚠️ حـظــ❗️ــره مــن الــمــجــمــوعــة👥')
@@ -191,10 +191,10 @@ local support_id = msg.from.id
           return
         end
         if not is_admin1(msg) and is_momod2(matches[2], msg.to.id) then
-           return "لــ⚠️ــا تـسـتـيــ❗️ــع حــظــر الادمـــنـيــه👤"
+           return "لــ⚠️ــا تـسـتـطـيــ❗️ــع حــظــر الادمـــنـيــه👤"
         end
         if tonumber(matches[2]) == tonumber(msg.from.id) then
-           return "لــ⚠️ــا تـسـتـيــ❗️ــع حــظــر نـفـسـك🗣"
+           return "لــ⚠️ــا تـسـتـطـيــ❗️ــع حــظــر نـفـسـك🗣"
         end
         local print_name = user_print_name(msg.from):gsub("‮", "")
      local name = print_name:gsub("_", "")
@@ -254,10 +254,10 @@ if matches[1]:lower() == 'زحلكه' then
    return
   end
   if not is_admin1(msg) and is_momod2(matches[2], msg.to.id) then
-   return "لــ⚠️ــا تـسـتـيــ❗️ــع حــظــر الادمـــنـيــه👤"
-  end
-  if tonumber(matches[2]) == tonumber(msg.from.id) then
-   return "لــ⚠️ــا تـسـتـيــ❗️ــع حــظــر نـفـسـك🗣"
+           return "لــ⚠️ــا تـسـتـطـيــ❗️ــع حــظــر الادمـــنـيــه👤"
+        end
+        if tonumber(matches[2]) == tonumber(msg.from.id) then
+           return "لــ⚠️ــا تـسـتـطـيــ❗️ــع حــظــر نـفـسـك🗣"
   end
     local user_id = matches[2]
     local chat_id = msg.to.id
