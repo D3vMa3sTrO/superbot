@@ -228,7 +228,7 @@ function create_config( )
     "leave_ban",
     "lock_bot",
     "lock_user",
-    "lock_inl",
+    "lock_inlin",
     "lock_tag",
     "lock_emoji",
     "lock_cmd",
