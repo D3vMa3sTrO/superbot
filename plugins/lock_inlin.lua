@@ -16,7 +16,7 @@ end
     return msg
     end
     
- local function medo(msg, matches)
+ local function tshake(msg, matches)
 if is_momod(msg) and matches[1] == "قفل" and matches[2] == "الانلاين" then
 local inline = 'mate:'..msg.to.id
 redis:set(inline, true)
@@ -35,7 +35,7 @@ return {
         '^[#!/](قفل) (الانلاين)$',
         '^[#!/](فتح) (الانلاين)$',
     },
-run = medo,
+run = tshake,
 pre_process = pre_process 
 }
 end
