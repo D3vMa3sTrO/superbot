@@ -1167,7 +1167,7 @@ local function cb_user_info(extra, success, result)
 		local user_id = "user#id"..result.peer_id
 		channel_demote(receiver, user_id, ok_cb, false)
 		if result.username then
-            text = "[@"..result.username.."] \nتـمـ ⚠️ ازالـتـــكـ مـــ���� الاداريــن 👥"
+            text = "[@"..result.username.."] \nتـمـ ⚠️ ازالـتـــكـ مـــن الاداريــن 👥"
             send_large_msg(receiver, text)
         else
             text = "[ "..result.peer_id.." ] \nتـمـ ⚠️ ازالـتـــكـ مـــن الاداريــن 👥"
