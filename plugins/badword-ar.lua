@@ -1,15 +1,15 @@
 --[[ 
-    _____    _        _    _    _____    Dev @lIMyIl 
-   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
-     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
-     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
-     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
-              CH > @lTSHAKEl_CH
---]]
+        _    _       _    _____     _____ ____    ____
+       / \  / \     / \  | ____|___|_   _| /_\ \ / __ \     Đєⱴ 💀: @MaEsTrO_0
+      / / \/ / \   / _ \ |  _| / __| | | | |_\_/| |  | |    Đєⱴ 💀: @devmaestr0
+     / / \ \/ \ \ / ___ \| |___\__ \ | | | | \ \| |__| |    Đєⱴ ฿๏ͳ💀: @iqMaestroBot
+    /_/   \/   \_/_/   \_|_____|___/ |_| |_|  \_\\____/     Đєⱴ ฿๏ͳ💀: @maestr0bot
+                   Đєⱴ Ϲḫ₳ͷͷєℓ💀: @DevMaestro
+—]]
 local function addword(msg, name)
     local hash = 'chat:'..msg.to.id..':badword'
     redis:hset(hash, name, 'newword')
-   return "تـمـ⚠️ اضـافـه الكـلـ❗️ـمـه الـى قائـمـه الـمـنـع🗣\n>"..name
+   return "تمت اضافة الكلمة الى قائمة المنع بنجاح 🗣\n>"..name
 end
 
 local function get_variables_hash(msg)
@@ -23,7 +23,7 @@ local function list_variablesbad(msg)
 
   if hash then
     local names = redis:hkeys(hash)
-local text = 'قــائــمــه📝 الــمـنــع لــلــكـ❗️ـلــمــات الــمــحــظــورهـ👥 \n\n'
+local text = 'قائمة الكلمات الممنوعة 📵  \n\n'
     for i=1, #names do
       text = text..'> '..names[i]..'\n'
     end
@@ -37,7 +37,7 @@ function clear_commandbad(msg, var_name)
   --Save on redis  
   local hash = get_variables_hash(msg)
   redis:del(hash, var_name)
-  return '🗣تـمـ☑️ تـنـظـيـف قـ📝ـائـمـه الـمنـع '
+  return 'تم تنظيف قائمة المنع 🏌 '
 end
 
 local function list_variables2(msg, value)
@@ -75,7 +75,7 @@ function clear_commandsbad(msg, cmd_name)
   --Save on redis  
   local hash = get_variables_hash(msg)
   redis:hdel(hash, cmd_name)
-  return ''..cmd_name..' \nتــمـ☑️ الـغـائـهـا مــن📝قـائــمـه الـمــنــع🗣'
+  return ''..cmd_name..' \nتم الغاء منع الكلمة 🏌 '
 end
 
 local function run(msg, matches)
@@ -120,12 +120,3 @@ return {
   },
   run = run
 }
-
---[[ 
-    _____    _        _    _    _____    Dev @lIMyIl 
-   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
-     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
-     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
-     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
-              CH > @lTSHAKEl_CH
---]]
