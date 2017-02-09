@@ -1,23 +1,23 @@
 --[[ 
-    _____    _        _    _    _____    Dev @lIMyIl 
-   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
-     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
-     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
-     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
-              CH > @lTSHAKEl_CH
---]]
+        _    _       _    _____     _____ ____    ____
+       / \  / \     / \  | ____|___|_   _| /_\ \ / __ \     Đєⱴ 💀: @MaEsTrO_0
+      / / \/ / \   / _ \ |  _| / __| | | | |_\_/| |  | |    Đєⱴ 💀: @devmaestr0
+     / / \ \/ \ \ / ___ \| |___\__ \ | | | | \ \| |__| |    Đєⱴ ฿๏ͳ💀: @iqMaestroBot
+    /_/   \/   \_/_/   \_|_____|___/ |_| |_|  \_\\____/     Đєⱴ ฿๏ͳ💀: @maestr0bot
+                   Đєⱴ Ϲḫ₳ͷͷєℓ💀: @DevMaestro
+—]]
 do
     
-local function mohammedboss(msg,matches)
+local function maestro(msg,matches)
     if matches[1] == "chat_add_user"  then 
-      return "اهــلـا وسـهـلـا فـي كــروبـ 😻❤️\n"..msg.to.title.."\n".."|🎐| ايــديــك | "..msg.from.id.."\n".."|🗣| مــعــرفــك | @"..(msg.action.user.username or "....... " ).."\n".."|📍| ايـديـ الـمـجـمـوعـه | "..msg.to.id.."\n"
+      return "اهلا وسهلا كبد عمري نورت 😻🙊\n"..msg.to.title.."\n".."🆔 ايديك  "..msg.from.id.."\n".."🌀#معرفك @"..(msg.action.user.username or "....... " ).."\n".."👥 ايدي المجموعة  "..msg.to.id.."\n"
 
     elseif matches[1] == "chat_add_user_link" then
-      return "اهــلـا وسـهـلـا فـي كــروبـ 😻❤️\n"..msg.to.title.."\n".."|🎐| ايــديــك | "..msg.from.id.."\n".."|🗣| مــعــرفــك | @"..(msg.action.user.username or "....... " ).."\n".."|📍| ايـديـ الـمـجـمـوعـه | "..msg.to.id.."\n"
+      return "اهلا وسهلا كبد عمري نورت 😻🙊\n"..msg.to.title.."\n".."🆔 ايديك  "..msg.from.id.."\n".."🌀#معرفك @"..(msg.action.user.username or "....... " ).."\n".."👥 ايدي المجموعة  "..msg.to.id.."\n"
 
     end
     if matches[1] == "chat_del_user" then
-        local text = 'الـلـه ويـاك يـا عـزيـزي 😁\n '..msg.action.user.first_name..'\n' ..'|🗣| مــعــرفــك | @'..(msg.action.user.username or "لا يوجد")..'\n' ..'|🎐| ايــديــك | '..msg.action.user.id..'\n'
+        local text = 'الله الله الله وياك 😹\n '..msg.action.user.first_name..'\n' ..'🌀 مــعــرفــك  @'..(msg.action.user.username or "لا يوجد")..'\n' ..'🆔 ايــديــك  '..msg.action.user.id..'\n'
     return reply_msg(msg.id, text, ok_cb, false)
 end
 end
@@ -28,15 +28,6 @@ return {
         "^!!tgservice (chat_del_user)$"
        
     },
- run = mohammedboss,
+ run = maestro
 }
 end
-
---[[ 
-    _____    _        _    _    _____    Dev @lIMyIl 
-   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
-     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
-     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
-     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
-              CH > @lTSHAKEl_CH
---]]
