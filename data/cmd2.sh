@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 
@@ -33,6 +34,6 @@ echo '6💯Processes : '"$ProcessCnt"
 echo "💯〰〰〰〰〰〰〰〰〰🃏"
 echo '7💯Uptime : '"$uptime"
 echo "🃏〰〰〰〰〰〰〰〰〰🃏"
-echo "💯-Đєⱴ💀: @TH3BOSS"
-echo "💯-Đєⱴ ฿๏ͳ💀: @ll60Kllbot"
-echo "💯-Đєⱴ Ϲḫ₳ͷͷєℓ💀: @llDEV1ll"
+echo "💯-Đєⱴ💀: @MaEsTrO_0"
+echo "💯-Đєⱴ ฿๏ͳ💀: @iqMaestroBot"
+echo "💯-Đєⱴ Ϲḫ₳ͷͷєℓ💀: @DevMaestro"
