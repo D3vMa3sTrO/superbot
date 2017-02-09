@@ -28,4 +28,4 @@ echo 'Hdd : '"$hdd"'%'
 echo 'Processes : '"$ProcessCnt"
 echo 'Uptime : '"$uptime"
 echo "Bot - Net "
-echo "Coded By Sajad Aliraqe"
+echo "Coded By Maestro "
