@@ -1,10 +1,11 @@
 --[[ 
-    _____    _        _    _    _____    Dev @lIMyIl 
-   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
-     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
-     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
-     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
---]]
+        _    _       _    _____     _____ ____    ____
+       / \  / \     / \  | ____|___|_   _| /_\ \ / __ \     Đєⱴ 💀: @MaEsTrO_0
+      / / \/ / \   / _ \ |  _| / __| | | | |_\_/| |  | |    Đєⱴ 💀: @devmaestr0
+     / / \ \/ \ \ / ___ \| |___\__ \ | | | | \ \| |__| |    Đєⱴ ฿๏ͳ💀: @iqMaestroBot
+    /_/   \/   \_/_/   \_|_____|___/ |_| |_|  \_\\____/     Đєⱴ ฿๏ͳ💀: @maestr0bot
+                   Đєⱴ Ϲḫ₳ͷͷєℓ💀: @DevMaestro
+—]]
 kicktable = {}
 
 do
@@ -98,8 +99,8 @@ local function pre_process(msg)
 		print(msgs)
 		if msgs >= max_msg then
 			print("Pass2")
-      send_large_msg("user#id"..msg.from.id, "⚠️ |  مـمـنـوع الـتـكـرار |🗣 "..msg.from.first_name.."\n⚠️ | بـسـبـب تـكـرار النـشـر |📛\n⚠️ | تم حظرك تلقائيأ \n⚠️ | مـعـرفـك |👥 : @"..(msg.from.username or "لا يوجد " ).."\n⚠️ | الــقــنــاه |🔰 : @lTSHAKEl_CH ")
-			savelog(msg.from.id.." PM", "⚠️ |  مـمـنـوع الـتـكـرار |🗣 "..msg.from.first_name.."\n⚠️ | بـسـبـب تـكـرار النـشـر |📛\n⚠️ | تم حظرك تلقائيأ \n⚠️ | مـعـرفـك |👥 : @"..(msg.from.username or "لا يوجد " ).."\n⚠️ | الــقــنــاه |🔰 : @lTSHAKEl_CH ")
+send_large_msg(receiver , "☠ |  ليش تكرر ياا خراا  |🗣 "..msg.from.first_name.."\n☠ | هيج احسلك   |🏌\n☠ |  حظرتك  حتة ترتاح  \n☠ | تم الحظر  بواسطة ﴿ الم̷ـــِْاي̷سـஓـتـــروِْ﴾️ |🏌 \n☠ | مـعـرف الــعــضــو |😼 : @"..(msg.from.username or "لا يوجد " ).."\n☠ | الــقــنــاة |📡 : @DevMaestro ")
+send_large_msg(receiver , "☠ |  ليش تكرر ياا خراا  |🗣 "..msg.from.first_name.."\n☠ | هيج احسلك   |🏌\n☠ |  حظرتك  حتة ترتاح  \n☠ | تم الحظر  بواسطة ﴿ الم̷ـــِْاي̷سـஓـتـــروِْ﴾️ |🏌 \n☠ | مـعـرف الــعــضــو |😼 : @"..(msg.from.username or "لا يوجد " ).."\n☠ | الــقــنــاة |📡 : @DevMaestro ")
 			block_user("user#id"..msg.from.id,ok_cb,false)--Block user if spammed in private
 		end
       end
@@ -114,10 +115,10 @@ local function pre_process(msg)
 	  if msg.to.type == 'chat' or msg.to.type == 'channel' then
       if username then 
          savelog(msg.to.id, name_log.." @"..username.." ["..msg.from.id.."] kicked for #spam") 
-send_large_msg(receiver , "⚠️ |  مـمـنـوع الـتـكـرار |🗣 "..msg.from.first_name.."\n⚠️ | بـسـبـب تـكـرار النـشـر |📛\n⚠️ | تم حظرك من الـمـجـمـوعـه تلقائيأ \n⚠️ | عـبـر حـمـايـه الــبوت |✔️ \n⚠️ | مـعـرف الــعــضــو |👥 : @"..(msg.from.username or "لا يوجد " ).."\n⚠️ | الــقــنــاه |🔰 : @lTSHAKEl_CH ")
+send_large_msg(receiver , "☠ |  ليش تكرر ياا خراا  |🗣 "..msg.from.first_name.."\n☠ | هيج احسلك   |🏌\n☠ |  حظرتك  حتة ترتاح  \n☠ | تم الحظر  بواسطة ﴿ الم̷ـــِْاي̷سـஓـتـــروِْ﴾️ |🏌 \n☠ | مـعـرف الــعــضــو |😼 : @"..(msg.from.username or "لا يوجد " ).."\n☠ | الــقــنــاة |📡 : @DevMaestro ")
       else 
          savelog(msg.to.id, name_log.." ["..msg.from.id.."] kicked for #spam") 
-send_large_msg(receiver , "⚠️ |  مـمـنـوع الـتـكـرار |🗣 "..msg.from.first_name.."\n⚠️ | بـسـبـب تـكـرار النـشـر |📛\n⚠️ | تم حظرك من الـمـجـمـوعـه تلقائيأ \n⚠️ | عـبـر حـمـايـه الــبوت |✔️\n⚠️ | مـعـرف الــعــضــو |👥 : @"..(msg.from.username or "لا يوجد " ).."\n⚠️ | الــقــنــاه |🔰 : @lTSHAKEl_CH ")
+send_large_msg(receiver , "☠ |  ليش تكرر ياا خراا  |🗣 "..msg.from.first_name.."\n☠ | هيج احسلك   |🏌\n☠ |  حظرتك  حتة ترتاح  \n☠ | تم الحظر  بواسطة ﴿ الم̷ـــِْاي̷سـஓـتـــروِْ﴾️ |🏌 \n☠ | مـعـرف الــعــضــو |😼 : @"..(msg.from.username or "لا يوجد " ).."\n☠ | الــقــنــاة |📡 : @DevMaestro ")
       end
      end 
       -- incr it on redis
