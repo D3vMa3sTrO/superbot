@@ -1,11 +1,11 @@
 --[[ 
-    _____    _        _    _    _____    Dev @lIMyIl 
-   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
-     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
-     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
-     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
---]]
-
+        _    _       _    _____     _____ ____    ____
+       / \  / \     / \  | ____|___|_   _| /_\ \ / __ \     Đєⱴ 💀: @MaEsTrO_0
+      / / \/ / \   / _ \ |  _| / __| | | | |_\_/| |  | |    Đєⱴ 💀: @devmaestr0
+     / / \ \/ \ \ / ___ \| |___\__ \ | | | | \ \| |__| |    Đєⱴ ฿๏ͳ💀: @iqMaestroBot
+    /_/   \/   \_/_/   \_|_____|___/ |_| |_|  \_\\____/     Đєⱴ ฿๏ͳ💀: @maestr0bot
+                   Đєⱴ Ϲḫ₳ͷͷєℓ💀: @DevMaestro
+—]]
 local function set_bot_photo(msg, success, result)
   local receiver = get_receiver(msg)
   if success then
@@ -308,6 +308,3 @@ return {
   run = run,
   pre_process = pre_process
 }
---By @imandaneshi :)
---https://github.com/SEEDTEAM/TeleSeed/blob/test/plugins/admin.lua
----Modified by @Rondoozle for supergroups
