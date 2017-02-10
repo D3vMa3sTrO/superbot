@@ -1,19 +1,18 @@
 --[[ 
-    _____    _        _    _    _____    Dev @lIMyIl 
-   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
-     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
-     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
-     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
-              CH > @lTSHAKEl_CH
---]]
+        _    _       _    _____     _____ ____    ____
+       / \  / \     / \  | ____|___|_   _| /_\ \ / __ \     Đєⱴ 💀: @MaEsTrO_0
+      / / \/ / \   / _ \ |  _| / __| | | | |_\_/| |  | |    Đєⱴ 💀: @devmaestr0
+     / / \ \/ \ \ / ___ \| |___\__ \ | | | | \ \| |__| |    Đєⱴ ฿๏ͳ💀: @iqMaestroBot
+    /_/   \/   \_/_/   \_|_____|___/ |_| |_|  \_\\____/     Đєⱴ ฿๏ͳ💀: @maestr0bot
+                   Đєⱴ Ϲḫ₳ͷͷєℓ💀: @DevMaestro
+—]] 
 do
-
 local function create_group(msg)
      -- superuser and admins only (because sudo are always has privilege)
     if is_sudo(msg) or is_realm(msg) and is_admin1(msg) then
 		local group_creator = msg.from.print_name
 		create_group_chat (group_creator, group_name, ok_cb, false)
-		return 'الـمـجـمـوعـهـ👥  [ '..string.gsub(group_name, '_', ' ')..' ] \n تـمـ☑️ صـنـاعـه الـمـجـمـوعـه👥 '
+		return 'المجموعة 👥  [ '..string.gsub(group_name, '_', ' ')..' ] \n تمت صناعة المجموعة👥 '
 	end
 end
 
@@ -1058,12 +1057,3 @@ return {
   run = run
 }
 end
-
---[[ 
-    _____    _        _    _    _____    Dev @lIMyIl 
-   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
-     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
-     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
-     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
-              CH > @lTSHAKEl_CH
---]]
