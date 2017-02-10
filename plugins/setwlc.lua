@@ -34,7 +34,7 @@ group_welcome = string.gsub(group_welcome, '$gpname', msg.to.title)
 group_welcome = string.gsub(group_welcome, '$name', ""..(msg.action.user.print_name or '').."")
   group_welcome = string.gsub(group_welcome, '$username', "@"..(msg.action.user.username or '').."")
   group_welcome = string.gsub(group_welcome, '$entime', ""..(jdat.ENtime).."")
-  group_welcome = string.gsub(group_welcome, '$endate', ""..(jdat.ENdate).."")
+  group_welcome = string.gsub(group_welcome, '$endate', ""..(jdat.ENdate).."")                     --@DevMaestro
   group_welcome = string.gsub(group_welcome, '$rules', ""..(rules or '').."")
   group_welcome = string.gsub(group_welcome, '$about', ""..(about or '').."")
 
@@ -45,7 +45,7 @@ group_welcome = string.gsub(group_welcome, '$name', ""..(msg.from.print_name or 
   group_welcome = string.gsub(group_welcome, '$username', "@"..(msg.from.username or '').."")
   group_welcome = string.gsub(group_welcome, '$entime', ""..(jdat.ENtime).."")
   group_welcome = string.gsub(group_welcome, '$endate', ""..(jdat.ENdate).."")
-  group_welcome = string.gsub(group_welcome, '$rules', ""..(rules or '').."")
+  group_welcome = string.gsub(group_welcome, '$rules', ""..(rules or '').."")       
   group_welcome = string.gsub(group_welcome, '$about', ""..(about or '').."")
 
  end
