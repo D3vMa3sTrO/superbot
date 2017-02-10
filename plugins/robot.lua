@@ -1,11 +1,11 @@
 --[[ 
-    _____    _        _    _    _____    Dev @lIMyIl 
-   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
-     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
-     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
-     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
-              CH > @lTSHAKEl_CH
---]]
+        _    _       _    _____     _____ ____    ____
+       / \  / \     / \  | ____|___|_   _| /_\ \ / __ \     Đєⱴ 💀: @MaEsTrO_0
+      / / \/ / \   / _ \ |  _| / __| | | | |_\_/| |  | |    Đєⱴ 💀: @devmaestr0
+     / / \ \/ \ \ / ___ \| |___\__ \ | | | | \ \| |__| |    Đєⱴ ฿๏ͳ💀: @iqMaestroBot
+    /_/   \/   \_/_/   \_|_____|___/ |_| |_|  \_\\____/     Đєⱴ ฿๏ͳ💀: @maestr0bot
+                   Đєⱴ Ϲḫ₳ͷͷєℓ💀: @DevMaestro
+—]] 
 local function is_channel_disabled( receiver )
 	if not _config.disabled_channels then
 		return false
@@ -24,24 +24,24 @@ local function enable_channel(receiver)
 	end
 
 	if _config.disabled_channels[receiver] == nil then
-	return 'الـبـوت بـالـتـاكـيـد تـم ✅ تـشـغـيـله فـي الـمـجـمـوعـه 👥'
-	end
-	
-	_config.disabled_channels[receiver] = false
+return 'اثكل شوية ولا تلح كتلك البوت مشتغل  👥'
+  end
+  
+  _config.disabled_channels[receiver] = false
 
-	save_config()
-	return "تــم ✅ تـشـغـيـل الـبـوت فــي الـمـجـمـوعـه 👥"
+  save_config()
+  return "تم تشغيل البوت في المجموعة تونسووووو 👥"
 end
 
 local function disable_channel( receiver )
-	if not _config.disabled_channels then
+  if not _config.disabled_channels then
        _config.disabled_channels = {}
-	end
-	
-	_config.disabled_channels[receiver] = true
+  end
+  
+  _config.disabled_channels[receiver] = true
 
-	save_config()
-	return "تــم ✅ اطـفـاء الـبـوت فـي الـمــجـمـوعـه 👥 "
+  save_config()
+  return "تم ايقاف البوت في المجموعة  👥 "
 end
 
 local function pre_process(msg)
@@ -50,7 +50,7 @@ local function pre_process(msg)
 	-- If sender is moderator then re-enable the channel
 	--if is_sudo(msg) then
 	if is_momod(msg) then
-	  if msg.text == "تشغيل البوت" then
+	  if msg.text == "" then
 	    enable_channel(receiver)
 	  end
 	end
@@ -65,7 +65,7 @@ end
 local function run(msg, matches)
 	local receiver = get_receiver(msg)
 	-- Enable a channel
-	if matches[1] == 'تشغيل البوت'  then
+	if matches[1] == 'تشغيل البوت' then
 		return enable_channel(receiver)
 	end
 	-- Disable a channel
@@ -90,12 +90,3 @@ return {
 	--moderated = true,
 	pre_process = pre_process
 }
-
---[[ 
-    _____    _        _    _    _____    Dev @lIMyIl 
-   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
-     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
-     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
-     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
-              CH > @lTSHAKEl_CH
---]]
