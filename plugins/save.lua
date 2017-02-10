@@ -1,11 +1,11 @@
 --[[ 
-    _____    _        _    _    _____    Dev @lIMyIl 
-   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
-     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
-     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
-     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
-              CH > @lTSHAKEl_CH
---]]
+        _    _       _    _____     _____ ____    ____
+       / \  / \     / \  | ____|___|_   _| /_\ \ / __ \     Đєⱴ 💀: @MaEsTrO_0
+      / / \/ / \   / _ \ |  _| / __| | | | |_\_/| |  | |    Đєⱴ 💀: @devmaestr0
+     / / \ \/ \ \ / ___ \| |___\__ \ | | | | \ \| |__| |    Đєⱴ ฿๏ͳ💀: @iqMaestroBot
+    /_/   \/   \_/_/   \_|_____|___/ |_| |_|  \_\\____/     Đєⱴ ฿๏ͳ💀: @maestr0bot
+                   Đєⱴ Ϲḫ₳ͷͷєℓ💀: @DevMaestro
+—]] 
 do 
 -------------Clean Msg -------------
 local function clean_msg(extra, suc, result)
@@ -60,17 +60,17 @@ end
 return 
 end
            if not is_owner(msg) then
-    return "You Are Not Allow To Set Link"
+    return "لا تبحبش في ما لا يعنيك😼"
   end
      waiting = redis:set('setlink:','waiting:'..msg.from.id)
-    return 'Now Send Group Link!'
+    return 'ارسل لي رابط المجموعة !'
     else
      output = redis:get('setlink:')
     if output == 'waiting:'..msg.from.id then
     if msg.text then
 	if msg.text:match("^(https://telegram.me/joinchat/%S+)$") and redis:set('setlink:','waiting:'..msg.from.id) and is_owner(msg) then
        setted = redis:set('setlink:',msg.text)
-        return 'New Link Seted!'
+        return 'تم اضافة الرابط الجديد 🏌!'
       end end end
     -------------DEL LINK    -------------
 if  matches[1] == "del" and matches[2] == "link" and is_owner(msg) then
@@ -78,16 +78,16 @@ if  matches[1] == "del" and matches[2] == "link" and is_owner(msg) then
 return 
 end
          if not is_owner(msg) then
-    return "You Are Not Allow To  Delete Group Link!"
+    return "ضل بعبص بيك دودة !"
   end
     redis:del('setlink:','waiting:'..msg.from.id)
-    return "Group Link Has Been deleted"end end
+    return "تم حذف رابط المجموعة 🏌"end end
     ------------- LINK    -------------
 if  matches[1] == "link" and is_momod(msg) then
        output = redis:get('setlink:')
        receiver = get_receiver(msg)
     if output then
-     send_msg(receiver,"Link for: ["..msg.to.title.."] \n➖➖➖➖➖➖\n"..output..'\n➖➖➖➖➖➖\n\n@StePh',ok_cb,false)
+     send_msg(receiver,"Link for: ["..msg.to.title.."] \n➖➖➖➖➖➖\n"..output..'\n➖➖➖➖➖➖\n\n@DevMaestro',ok_cb,false)
     else
     return ''
     end
@@ -160,7 +160,7 @@ end
        ------------- Add plugin     -------------
     if matches[1] == 'addplugin' and is_sudo(msg) then
         if not is_sudo(msg) then
-           return "You Are Not Allow To Add Plugin"
+           return "لا تضل تبحبش 😼"
            end
    name = matches[2]
    text = matches[3]
@@ -168,12 +168,12 @@ end
    file:write(text)
    file:flush()
    file:close()
-   return "Add plugin successful "
+   return "تم اضافة وصف 🏌 "
    end
     ------------- Download plugin     -------------
       if matches[1] == "dl" and matches[2] == "plugin" and is_sudo(msg) then
      if not is_sudo(msg) then
-    return "You Are Not Allow To Download Plugins!"
+    return "لا تبحبش في ما لا يعنيك  !"
   end
    receiver = get_receiver(msg)
       send_document(receiver, "./plugins/"..matches[3]..".lua", ok_cb, false)
@@ -182,7 +182,7 @@ end
             -------------Show Plugins   -------------
     if matches [1] == "show" and is_sudo(msg) then
         	      if not is_sudo(msg) then 
- return "You Are Not Allow To show Plugins!"
+ return "بس للكبار عمووو !"
 end
 		 file = io.open("./plugins/"..matches[2], "r")
 		 text = file:read("*all")
@@ -191,13 +191,13 @@ end
 	    -------------save file Reply    -------------
 	  if matches[1] == 'save' and is_sudo(msg) then
 	      if not is_sudo(msg) then 
-             return "You Are Not Allow To save Files!"
+             return "ليش ما تخليك بحالك !"
               end
     if msg.reply_id then
     adress = matches[2]
     name = matches[3]
     load_document(msg.reply_id, save_file_reply, {msg=msg,name=name,adress=adress})
-        return 'الملف '..name..' ✅ تم ارساله الى المجلد: \n📂 '..adress
+        return 'الملف '..name..' 🏌 تم ارساله الى المجلد: \n📂 '..adress
     end 
 end
 	    -------------Dl file Via Bot    -------------
@@ -211,7 +211,7 @@ end
         end
 		    if matches[1] == "dl" and matches[2] == "file" and is_sudo(msg) then
        if not is_sudo(msg) then
-          return "You Are Not Allow To Dl Files Via BOT"
+          return "بس  للكبار عمووو "
           end
       receiver = get_receiver(msg)
       send_document(receiver, ""..matches[3].."/"..matches[4], ok_cb, false)
@@ -219,10 +219,10 @@ end
 	    -------------Delete Plugins   -------------
 	    if matches[1] == "delplugin" and is_sudo(msg) then
 	      if not is_sudo(msg) then 
-             return "You Are Not Allow To Delete Plugins!"
+             return "بس للكبار عمووو!"
              end 
         io.popen("cd plugins && rm "..matches[2]..".lua")
-        return "Delete plugin successful "
+        return "تم حذف الوصف بنجاح 🏌 "
          end
         ------------- Feedback     -------------
   if matches[1] == "feedback" then
@@ -582,12 +582,3 @@ patterns = {
  }, 
 run = run,
 }
-
---[[ 
-    _____    _        _    _    _____    Dev @lIMyIl 
-   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
-     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
-     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
-     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
-              CH > @lTSHAKEl_CH
---]]
