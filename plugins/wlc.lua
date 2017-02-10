@@ -1,10 +1,11 @@
---[[   كتابه المطور :-  @HI_DEBYE
-    _____    _        _    _    _____    Dev @lIMyIl 
-   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
-     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
-     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
-     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
---]]
+--[[ 
+        _    _       _    _____     _____ ____    ____
+       / \  / \     / \  | ____|___|_   _| /_\ \ / __ \     Đєⱴ 💀: @MaEsTrO_0
+      / / \/ / \   / _ \ |  _| / __| | | | |_\_/| |  | |    Đєⱴ 💀: @devmaestr0
+     / / \ \/ \ \ / ___ \| |___\__ \ | | | | \ \| |__| |    Đєⱴ ฿๏ͳ💀: @iqMaestroBot
+    /_/   \/   \_/_/   \_|_____|___/ |_| |_|  \_\\____/     Đєⱴ ฿๏ͳ💀: @maestr0bot
+                   Đєⱴ Ϲḫ₳ͷͷєℓ💀: @DevMaestro
+—]]
 do
 local function run(msg, matches, callback, extra)
 local data = load_data(_config.moderation.data)
@@ -15,7 +16,7 @@ local group_welcome = redis:hget(hash,'welcome')
 if matches[1] == 'حذف الترحيب' and not matches[2] and is_momod(msg) then 
     
    redis:hdel(hash,'welcome')
-        return 'تم حذف الترحيب بنجاح✅'
+        return '🏌تـم حـذف الـتـرحـيـب بـنـجـاح✔️'
 end
 
 local url , res = http.request('http://api.gpmod.ir/time/')
@@ -24,7 +25,7 @@ local jdat = json:decode(url)
 
 if is_momod(msg) and matches[1] == 'ضع ترحيب' then
 redis:hset(hash,'welcome',matches[2])
-        return 'تم حفظ الترحيب💡'
+        return '🏌تـم حـفـظ الـتـرحـيـب✔️'
 end
 
 if matches[1] == 'chat_add_user' and msg.service then
@@ -62,10 +63,3 @@ return {
   run = run
 }
 end
---[[   كتابه المطور :-  @HI_DEBYE
-    _____    _        _    _    _____    Dev @lIMyIl 
-   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
-     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
-     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
-     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
---]]
