@@ -1,5 +1,12 @@
-
-local function tshake(msg, matches)
+--[[ 
+        _    _       _    _____     _____ ____    ____
+       / \  / \     / \  | ____|___|_   _| /_\ \ / __ \     Đєⱴ 💀: @MaEsTrO_0
+      / / \/ / \   / _ \ |  _| / __| | | | |_\_/| |  | |    Đєⱴ 💀: @devmaestr0
+     / / \ \/ \ \ / ___ \| |___\__ \ | | | | \ \| |__| |    Đєⱴ ฿๏ͳ💀: @iqMaestroBot
+    /_/   \/   \_/_/   \_|_____|___/ |_| |_|  \_\\____/     Đєⱴ ฿๏ͳ💀: @maestr0bot
+                   Đєⱴ Ϲḫ₳ͷͷєℓ💀: @DevMaestro
+—]]
+local function maestro(msg, matches)
     if is_momod(msg) then
         return
     end
@@ -27,5 +34,5 @@ return {
 "%[(gif)%]",
 "%[(sticker)%]",
   },
-  run = tshake
+  run = maestro
 }
