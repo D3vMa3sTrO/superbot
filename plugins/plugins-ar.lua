@@ -1,11 +1,11 @@
 --[[ 
-    _____    _        _    _    _____    Dev @lIMyIl 
-   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
-     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
-     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
-     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
-              CH > @lTSHAKEl_CH
---]]
+        _    _       _    _____     _____ ____    ____
+       / \  / \     / \  | ____|___|_   _| /_\ \ / __ \     Đєⱴ 💀: @MaEsTrO_0
+      / / \/ / \   / _ \ |  _| / __| | | | |_\_/| |  | |    Đєⱴ 💀: @devmaestr0
+     / / \ \/ \ \ / ___ \| |___\__ \ | | | | \ \| |__| |    Đєⱴ ฿๏ͳ💀: @iqMaestroBot
+    /_/   \/   \_/_/   \_|_____|___/ |_| |_|  \_\\____/     Đєⱴ ฿๏ͳ💀: @maestr0bot
+                   Đєⱴ Ϲḫ₳ͷͷєℓ💀: @DevMaestro
+—]]
 do
 
 -- Returns the key (index) in the config.enabled_plugins table
@@ -34,17 +34,17 @@ local function list_all_plugins(only_enabled)
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
     --  مفعل enabled, معطل disabled
-    local status = '📕 معطل'
+    local status = '📁 معطل'
     nsum = nsum+1
     nact = 0
     -- Check if is enabled
     for k2, v2 in pairs(_config.enabled_plugins) do
       if v == v2..'.lua' then 
-        status = '📗 مفعل' 
+        status = '📁 مفعل' 
       end
       nact = nact+1
     end
-    if not only_enabled or status == '📗 مفعل' then
+    if not only_enabled or status == '📁 مفعل' then
       -- get the name
       v = string.match (v, "(.*)%.lua")
       text = text..nsum..'. '..v..'  '..status..'\n'
@@ -60,17 +60,17 @@ local function list_plugins(only_enabled)
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
     --  مفعل enabled, معطل disabled
-    local status = '📕 معطل'
+    local status = '📁 معطل'
     nsum = nsum+1
     nact = 0
     -- Check if is enabled
     for k2, v2 in pairs(_config.enabled_plugins) do
       if v == v2..'.lua' then 
-        status = '📗 مفعل' 
+        status = '📁 مفعل' 
       end
       nact = nact+1
     end
-    if not only_enabled or status == '📗 مفعل' then
+    if not only_enabled or status == '📁 مفعل' then
       -- get the name
       v = string.match (v, "(.*)%.lua")
       text = text..v..'  '..status..'\n'
@@ -91,7 +91,7 @@ local function enable_plugin( plugin_name )
   print('checking if '..plugin_name..' exists')
   -- Check if plugin is enabled
   if plugin_enabled(plugin_name) then
-    return 'الملف  '..plugin_name..' بالتاكيد تم تفعيله ☑️'
+    return 'الملف  '..plugin_name..' بالتاكيد تم تفعيله ✔️'
   end
   -- Checks if plugin exists
   if plugin_exists(plugin_name) then
@@ -102,14 +102,14 @@ local function enable_plugin( plugin_name )
     -- Reload the plugins
     return reload_plugins( )
   else
-    return ''..plugin_name..' لا يوجد ملف بهذا الاسم في الملفات  '
+    return ''..plugin_name..' لا يوجد ملف بهذا الاسم   '
   end
 end
 
 local function disable_plugin( name, chat )
   -- Check if plugins exists
   if not plugin_exists(name) then
-    return ''..name..' لا يوجد ملف بهذا الاسم في الملفات '
+    return ''..name..' لا يوجد ملف بهذا الاسم  '
   end
   local k = plugin_enabled(name)
   -- Check if plugin is enabled
@@ -236,12 +236,3 @@ return {
 }
 
 end
-
---[[ 
-    _____    _        _    _    _____    Dev @lIMyIl 
-   |_   _|__| |__    / \  | | _| ____|   Dev @li_XxX_il
-     | |/ __| '_ \  / _ \ | |/ /  _|     Dev @h_k_a
-     | |\__ \ | | |/ ___ \|   <| |___    Dev @Aram_omar22
-     |_||___/_| |_/_/   \_\_|\_\_____|   Dev @IXX_I_XXI
-              CH > @lTSHAKEl_CH
---]]
