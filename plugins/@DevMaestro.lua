@@ -9,18 +9,17 @@
 do 
 
 local function maestro(msg, matches) 
- local sudo = 326812245 , 281266686
- 
+ local sudo = 281266686
  local r = get_receiver(msg)
-  send_large_msg(r, "هہذٍأُ مہطًوُرُيّ😍فَدٍيّتًوُوُ ڳّلڳّمہ😇رُأُيّحّ أُصٌيّحّة أُڳّلة مہنہوُ يّرُيّدٍڳّ 🤔 ؟؟؟ 🍷")
-  send_large_msg("user#id"..sudo, "🎴 هناك شخص 👤 بحاجة اليك 🔷✔\n\n ".."⛔ المعرف : @"..msg.from.username.."\n 🔋 الايدي : "..msg.from.id.."\n 📋 اسم المجموعة : "..msg.to.title.."\n 🆔 ايدي المجموعة : "..msg.from.id..'\n 🕚 الوقت : '..os.date(' %T*', os.time())..'\n 📅 التاريخ : '..os.date('!%A, %B %d, %Y*\n', timestamp))
-end 
+  send_large_msg(r, "انتضر  🙂هسه آروح اصيحلك مطوري اكله منو يريدك؟ 🙊")
+send_large_msg("user#id"..sudo, "📝 لك مطوري  🕵  يردونك ضروري  🤖🍷\n\n ".." 👥 معرفه المحتاجك  : @"..msg.from.username.."\n 🆔 الايدي   : "..msg.from.id.."\n 📝 اسم المجموعه  : "..msg.to.title.."\n 🆔 ايدي المجموعه  : "..msg.from.id..'\n 🕑 الوقت : '..os.date(' %T*', os.time())..'\n 📅  التاريخ  : '..os.date('!%A, %B %d, %Y*\n', timestamp))end 
 
 return { 
   patterns = { 
-     "^(@MaEsTrO_0 , @devmaestr0)$" 
+     "^(@devmaestr0)$" 
   }, 
   run = maestro, 
 } 
 
 end
+-- BY Dev -maestro (@devmaestr0)
